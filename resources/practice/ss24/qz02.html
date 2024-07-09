@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Quiz 02 Practice - COMP110 - 24S</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1720564025.0160792">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Quiz 02 Practice</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#functions-conceptual-questions">Functions Conceptual Questions</a></li>
+<li><a href="#for-loops">for Loops</a></li>
+<li><a href="#function-writing">Function Writing</a></li>
+<li><a href="#unit-tests-conceptual-questions">Unit Tests Conceptual Questions</a></li>
+<li><a href="#unit-test-writing">Unit Test Writing</a></li>
+<li><a href="#memory-diagrams">Memory Diagrams</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#functions-conceptual-questions-solutions">Functions Conceptual Questions Solutions</a></li>
+<li><a href="#for-loop-solutions">for Loop Solutions</a></li>
+<li><a href="#function-writing-solutions">Function Writing Solutions</a></li>
+<li><a href="#unit-tests-conceptual-questions-solutions">Unit Tests Conceptual Questions Solutions</a></li>
+<li><a href="#unit-test-writing-solutions">Unit Test Writing Solutions</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="questions">Questions</h1>
+<p>The quiz itself will be similar in difficulty to this practice worksheet.</p>
+<p>Solutions for each problem can be found at the bottom of this page.</p>
+<h2 id="functions-conceptual-questions">Functions Conceptual Questions</h2>
+<ol type="1">
+<li><em>Global</em> variables are limited to the scope of the function they are declared in. (T/F)</li>
+<li>Variables can have the same name but store different values if they are defined in a different scope. (T/F)</li>
+<li>Named constants should be used to store values that may change throughout the program. (T/F)</li>
+<li>When using a <code>for...in</code> loop, on the first line of the loop you must specify the <em>type</em> of the variable (variable refers to <code>i</code> in <code>for i in nums</code>). (T/F)</li>
+</ol>
+<p><a href="#functions-conceptual-questions-solutions">Solutions</a></p>
+<h2 id="for-loops">for Loops</h2>
+<p>1.1 Rewrite the following code snippet with same functionality using a <code>for ... in</code> loop. 1.2 Rewrite the following code snippet with same functionality using a <code>for ... in range(...)</code> loop.</p>
+<pre><code>    stats: list[int] = [7, 8, 9]
+    index: int = 0
+    total: int = 100
+    while index &lt; len(stats):
+        total -= stats[index]
+        index += 1</code></pre>
+<p><a href="#for-loop-solutions">Solution</a></p>
+<h2 id="function-writing">Function Writing</h2>
+<ol type="1">
+<li>Odd and Even: <a href="/static/practice_worksheets/sp23/qz02-pp1.pdf">instructions</a></li>
+<li>Short Words: <a href="/static/practice_worksheets/sp23/qz02-pp3.pdf">instructions</a></li>
+</ol>
+<p><a href="#function-writing-solutions">Solution</a></p>
+<h2 id="unit-tests-conceptual-questions">Unit Tests Conceptual Questions</h2>
+<ol type="1">
+<li>All pytest test function names must begin with <code>test_</code>. (T/F)</li>
+<li>If a unit test does NOT pass, this means that one of the assertions in the test is False. (T/F)</li>
+<li>Test functions should be written in a file with a name followed by <code>_test.py</code>. (T/F)</li>
+<li>Pytest is the only unit testing framework available for Python. (T/F)</li>
+<li>Unit tests in Pytest are written in separate files from the code they are testing. (T/F)</li>
+</ol>
+<p><a href="#unit-tests-conceptual-questions-solutions">Solutions</a></p>
+<h2 id="unit-test-writing">Unit Test Writing</h2>
+<ol type="1">
+<li>This function finds the first word in a <code>list</code> of <code>str</code> with an <em>even</em>length.</li>
+</ol>
+<pre><code>    def find_even(words: list[str]) -&gt; str:
+        idx: int = 0
+        while idx &lt; len(words):
+            if len(words[idx]) % 2 == 0:
+                return words[idx]
+            idx += 1
+        return &quot;&quot;</code></pre>
+<p>Fill in this unit test with a <em>use case</em>.</p>
+<pre><code>    def test_find_even_use_case() -&gt; None:
+            &quot;&quot;&quot; Put code here. &quot;&quot;&quot;</code></pre>
+<ol start="2" type="1">
+<li>This function <em>removes</em> the first word in a <code>list</code> of <code>str</code> with an <em>even</em> length.</li>
+</ol>
+<pre><code>    def remove_first_even(words: list[str]) -&gt; None:
+        idx: int = 0
+        condition: bool = True
+        while (idx &lt; len(words)) and condition:
+            if len(words[idx]) % 2 == 0:
+                words.pop(idx)
+                condition = False
+            idx += 1</code></pre>
+<p>Fill in this unit test with a <em>use case</em>.</p>
+<pre><code>    def test_remove_first_even_use_case() -&gt; None:
+            &quot;&quot;&quot; Put code here. &quot;&quot;&quot;</code></pre>
+<p><a href="#unit-test-writing-solutions">Solutions</a></p>
+<h2 id="memory-diagrams">Memory Diagrams</h2>
+<p>For more practice, make sure to check out the <a href="/resources/practice/MemDiagrams.html">practice memory diagrams</a>.</p>
+<h1 id="solutions">Solutions</h1>
+<h2 id="functions-conceptual-questions-solutions">Functions Conceptual Questions Solutions</h2>
+<ol type="1">
+<li>False</li>
+<li>True</li>
+<li>False</li>
+<li>False</li>
+</ol>
+<h2 id="for-loop-solutions">for Loop Solutions</h2>
+<p>1.1</p>
+<pre><code>    stats: list[int] = [7, 8, 9]
+    total: int = 100
+    for elem in stats:
+        total -= elem</code></pre>
+<p>1.2</p>
+<pre><code>    stats: list[int] = [7, 8, 9]
+    total: int = 100
+    for index in range(0, len(stats)):
+        total -= stats[index]</code></pre>
+<h2 id="function-writing-solutions">Function Writing Solutions</h2>
+<p>Note: Your solution does not need to be identical to these, these are just examples of one of many possible solutions.</p>
+<ol type="1">
+<li></li>
+</ol>
+<pre><code>    def odd_and_even(list1: list[int]) -&gt; list[int]:
+        &quot;&quot;&quot;Find the odd elements with even indexes.&quot;&quot;&quot;
+        i: int = 0
+        list2: list[int] = []
+
+        while i &lt; len(list1):
+            if list1[i] % 2 == 1 and i % 2 == 0:
+                list2.append(list1[i])
+            i += 1
+
+        return list2</code></pre>
+<!-- 2.
+```
+    def value_exists(inp_dict: dict[str,int], val: int) -> bool:
+        """Return true if val is in inp_dict"""
+        exists: bool = False
+        for elem in inp_dict:
+            if inp_dict[elem] == val:
+                exists = True
+        return exists
+``` -->
+<ol start="2" type="1">
+<li></li>
+</ol>
+<pre><code>    def short_words(inp_list: list[str]) -&gt; list[str]:
+        &quot;&quot;&quot;Filter out the shorter words&quot;&quot;&quot;
+        ret_list: list[str] = []
+        for x in inp_list:
+            if len(x) &lt; 5:
+                ret_list.append(x)
+            else:
+                print(f&quot;{x} is too long!&quot;)
+        return ret_list</code></pre>
+<h2 id="unit-tests-conceptual-questions-solutions">Unit Tests Conceptual Questions Solutions</h2>
+<ol type="1">
+<li>True</li>
+<li>True</li>
+<li>True</li>
+<li>False. It is the one we use for this class, but there are other frameworks!</li>
+<li>True</li>
+</ol>
+<h2 id="unit-test-writing-solutions">Unit Test Writing Solutions</h2>
+<p>These can have many possible answers! Here is just one example.</p>
+<ol type="1">
+<li></li>
+</ol>
+<pre><code>    def test_find_even_use_case() -&gt; None:
+            test_input: list[str] = [&quot;Hello&quot;, &quot;Hi&quot;, &quot;Howdy&quot;, &quot;Hiya&quot;]
+            assert find_even(test_input) == &quot;Hi&quot;</code></pre>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<pre><code>    def test_remove_first_even_use_case() -&gt; None:
+        test_input: list[str] = [&quot;Hello&quot;, &quot;Hi&quot;, &quot;Howdy&quot;, &quot;Hiya&quot;]
+        remove_first_even(test_input)
+        assert test_input == [&quot;Hello&quot;, &quot;Howdy&quot;, &quot;Hiya&quot;]</code></pre>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Megan Zhang,        David Karash,        Coralee Vickers,        Alyssa Byrnes, Carolyn Pierce</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
