@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1722620639.8037355">
+  <link rel="stylesheet" href="/static/styles.css?v=1722727867.2696962">
 </head>
 
 <body>
@@ -62,6 +62,11 @@
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
 <li><a href="#introduction-and-setup">Introduction and Setup</a></li>
+<li><a href="#function-definition">Function Definition</a></li>
+<li><a href="#calling-your-function-inside-the-file">Calling Your Function Inside the File</a></li>
+<li><a href="#prompting-for-user-input">Prompting For User Input</a></li>
+<li><a href="#submission">Submission</a></li>
+<li><a href="#congratulations">Congratulations!</a></li>
 </ul>
 </</ul>
                     </div>
@@ -72,6 +77,55 @@
 <p>These Challenge Questions are designed to help you implement some of the concepts you’ve learned on small problems before you handle larger problems in your exercises!</p>
 <p>To start, right click in the “Explorer” pane of your workspace and select “New Folder…”. Name this new folder <code>CQs</code>. This is where you will be writing and storing your challenge questions this semester!</p>
 <p>Now, right click on your “CQs” folder and select “New File…”. Name this file <code>cq00_functions.py</code>. <em>The <code>.py</code> at the end of the file name is necessary, or your program won’t run!</em></p>
+<p>Make sure to initialize your file with a docstring and <code>__author__</code> variable just like you did in EX00!</p>
+<h2 id="function-definition">Function Definition</h2>
+<p>Now, you are going to write a function on your own! This function will just take your input and repeat it back to you! <em>Define a function</em> with the following expectations:</p>
+<ul>
+<li>Name: <code>mimic</code></li>
+<li>Parameters:
+<ul>
+<li><code>message</code> parameter of type <code>str</code> - the message that we will be mimicing!</li>
+</ul></li>
+<li>Return type: <code>str</code></li>
+<li>Add a Docstring describing the purpose of the function.</li>
+</ul>
+<p>The function should simply return <code>message</code> back to you!</p>
+<p>You can test this function by <em>calling</em> it under the “Interact” tab of your trailhead! You should get behavior looking something like this:</p>
+<p><img class="img-fluid" src="/static/cqs/cq00/mimic.PNG"></p>
+<h2 id="calling-your-function-inside-the-file">Calling Your Function Inside the File</h2>
+<p>Before you do anything else, try clicking on the “Run” tab in your trailhead. You’ll see something like this.</p>
+<p><img class="img-fluid" src="/static/cqs/cq00/no-output.PNG"></p>
+<p>This is to be expected because <code>cq00_functions.py</code> only contains a function definition; nothing has been called or printed!</p>
+<p>Let’s edit the module to call the function when it’s run! At the bottom of your <code>cq00_functions.py</code> file, add the following lines of code to the bottom of your file (note the indentation, as it is important!):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="bu">print</span>(mimic(message<span class="op">=</span><span class="st">&quot;Howdy!&quot;</span>))</span></code></pre></div>
+<p>Before revealing what this code is doing, please try saving your code and look under the “Run” tab in the Trailhead. You should see something like this:</p>
+<p><img class="img-fluid" src="/static/cqs/cq00/mimic-module-call.PNG"></p>
+<p>Now, come back to the code, and try and break down the second line for yourself. Just like in math, you can expect to work your way from the innermost parentheses outward.</p>
+<p>You’ll see that it is <em>calling</em> the <code>mimic</code> function with the argument <code>message="Howdy!"</code>, and then in the outer parentheses is it <em>printing</em> the result. This is called a <em>nested function call</em> because the result (aka <em>return value</em>) of the <code>mimic</code> function is then being passed as an argument to the <code>print</code> function.</p>
+<p>The first line, <code>if __name__ == "__main__":</code> is a special kind of statement called a <em>conditional statement</em> you’ll learn about in a few weeks. The effect it has here is when you run this program in the “Run” tab, the indented code beneath the <code>if</code> statement will be evaluated. However, when you load this program in the REPL of the “Interact” tab, the code beneath the if statement will not be run. This gives us the best of both worlds! We will learn more about <em>how</em> this works in the future, but for now it’s good to just know that it provides you with this functionality!</p>
+<h2 id="prompting-for-user-input">Prompting For User Input</h2>
+<p>Finally, we are going to make our module a little more interactive by prompting the user for input!</p>
+<p>Change the line:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="bu">print</span>(mimic(message<span class="op">=</span><span class="st">&quot;Howdy!&quot;</span>))</span></code></pre></div>
+<p>to:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">print</span>(mimic(message<span class="op">=</span><span class="bu">input</span>(<span class="st">&quot;What is your message?&quot;</span>)))</span></code></pre></div>
+<p>Again, before we explain what this does, try saving your code and look under the “Run” tab in the Trailhead. You should see that it prompts you for a message. Type in any message and hit enter. It should repeat that message right back to you!</p>
+<p>Similar to the <code>print</code> function, <code>input</code> is a function that has built-in behavior. The <em>argument</em> will be whatever message you want displayed to the user. (E.g. <code>"What is your message?"</code>) The <em>return</em> value will be a <code>str</code> with whatever input the user has typed. Notice that it is passing the return value of the <code>input</code> function as an argument to the <code>mimic</code> function, which is why it repeats the user input back to you!</p>
+<h2 id="submission">Submission</h2>
+<p>Just like you did for EX00, create a .zip file by running the following command in your terminal:</p>
+<p><code>python -m tools.submission CQs/cq00_functions.py</code></p>
+<p>Then, drag and drop that .zip file into Gradescope!</p>
+<h2 id="congratulations">Congratulations!</h2>
+<p>You completed your first challenge question! Hopefully now you’re more comfortable with the following concepts:</p>
+<ul>
+<li>Defining a function</li>
+<li>Calling a function in the “interact” tab of the trailhead</li>
+<li>Calling a function within the module</li>
+<li>The basic behavior behind the line <code>if __name__ == "__main__":</code></li>
+<li>The <code>input</code> function</li>
+<li>Nested function calls</li>
+</ul>
 </div>
 
        
