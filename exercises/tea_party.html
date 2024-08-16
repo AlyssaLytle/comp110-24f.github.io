@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1723816107.9247606">
+  <link rel="stylesheet" href="/static/styles.css?v=1723816609.7228155">
 </head>
 
 <body>
@@ -77,13 +77,11 @@
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><!-- ![](/static/exercises/ex01/banner.png) -->
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><!-- ![](/static/exercises/tea-party/banner.png) -->
 <h2 id="overview">Overview</h2>
 <p>In this exercise, you will write a program to help you plan a cozy tea party. The program will ultimately ask the user for the number of guests and you will calculate the quantity of tea bags needed, the number of treats to accompany the tea, and the expected cost of the party.</p>
 <p>Here’s an example of using the program if you imagine we are trying to throw a giant tea party for you and 333 of your friends:</p>
-<figure>
-<img src="/static/exercises/ex01/example_run.png" alt="" /><figcaption>Example Run</figcaption>
-</figure>
+<p><img class="img-fluid" src="/static/exercises/tea-party/example_run.png"></p>
 <p><em>Now you just need $1,085.50 to bring this dream to life!</em></p>
 <p>Since this is our first program in COMP110, we will specify the structural expectations and function designs for you to implement and it is important to follow these expectations closely. <em>This program is autograded and the only path toward achieving full credit is to achieve full credit via the autograder.</em></p>
 <p>The purpose of this exercise is to gain practice with the following concepts:</p>
@@ -122,9 +120,7 @@
 </ul>
 <p>Assume everyone at the tea party will drink two cups of tea and, therefore, we should plan to have two tea bags for them. Implement the body of this function to satisfy this expectation and return the number of tea bags needed based on the number of people the function is called with.</p>
 <p>Once you have implemented your function definition, save your file, and test it out in the Trailhead Interact REPL. You should expect to be able to make calls and see their return values like below:</p>
-<figure>
-<img src="/static/exercises/ex01/tea_bags_repl.png" alt="" /><figcaption><code>tea_bags</code> REPL Examples</figcaption>
-</figure>
+<p><img class="img-fluid" src="/static/exercises/tea-party/tea_bags_repl.png"></p>
 <p>Try a few additional function calls to be sure your function is working as you expect!</p>
 <h2 id="defining-the-treats-function">2. Defining the <code>treats</code> Function</h2>
 <p>Now let’s implement a function to compute the number of treats needed based on the number of teas guests are expecting to drink. Add a couple blank lines following your <code>tea_bags</code> function and then <strong>define a function</strong> with the following expectations:</p>
@@ -141,9 +137,7 @@
 <p>Notice that this function is given <code>people</code> as a parameter, not the number of teas. In the <em>return statement</em> of your <code>treats</code> function, you <strong>must make a call to your <code>tea_bags</code> function</strong> in order to compute the number of teas. Then, you can use that value to compute the number of treats. This function call to <code>tea_bags</code> must use <em>keyword argument</em> for full credit. <strong>The autograder will grade based on these expectations!</strong></p>
 <p>You want to be careful of the <em>data type</em> returned by your <code>treats</code> function. You will need to convert the result of your computation to an <code>int</code> before returning it.</p>
 <p>Once you have implemented your function definition, save your file, and test it out in the Trailhead Interact REPL. You should expect to be able to make calls and see their return values like below:</p>
-<figure>
-<img src="/static/exercises/ex01/treats_repl.png" alt="" /><figcaption><code>treats</code> REPL Examples</figcaption>
-</figure>
+<p><img class="img-fluid" src="/static/exercises/tea-party/treats_repl.png"></p>
 <p>Try a few additional function calls to be sure your function is working as you expect!</p>
 <!-- <div class="fox-talk">
 <figure>
@@ -170,9 +164,7 @@ Why do you think we are making use of a call to the `tea_bags` function when imp
 </ul>
 <p>The <code>cost</code> function will assume <em>each tea bag costs $0.50 and each treat costs $0.75</em>. The function should return the total cost of the tea bags and treats combined.</p>
 <p>Once you have implemented your function definition, save your file, and test it out in the Trailhead Interact REPL. You should expect to be able to make calls and see their return values like below:</p>
-<figure>
-<img src="/static/exercises/ex01/cost_repl.png" alt="" /><figcaption><code>cost</code> REPL Examples</figcaption>
-</figure>
+<p><img class="img-fluid" src="/static/exercises/tea-party/cost_repl.png"></p>
 <h2 id="defining-the-main_planner-function">4. Defining the <code>main_planner</code> Function</h2>
 <p>Now let’s implement a function to bring all of these functions together in a “main planner” function that calls each and produces printed output.</p>
 <p>It is conventional to write “main” functions as the first function definition in a program. Rather than adding this function definition <em>after</em> your <code>cost</code> function, try defining this function <em>above</em> your <code>tea_bags</code> function. This is a convention that helps you read your program kind of like a newspaper article: the big picture of the program is at the top and the details follow.</p>
@@ -188,9 +180,7 @@ Why do you think we are making use of a call to the `tea_bags` function when imp
 </ul>
 <p>There is something new and different about this function than the others you have written so far: it does not return a value. Instead, it will print output to the screen. This is a common pattern for “main” functions: they orchestrate the execution of a program and produce output, but they do not return a value. Anotha special feature of a function that returns <code>None</code> is that it does not need a <code>return</code> statement. The function will return <code>None</code> by default. However, you are welcome to include a final line of <code>return None</code> in its body.</p>
 <p>This function body will have multiple lines following the Docstring. Each line will be a <code>print</code> statement with a string literal concatenated with the results of <strong>calling your function definitions</strong>. The string literals should be formatted to match the exact output of the uses shown below:</p>
-<figure>
-<img src="/static/exercises/ex01/main_planner_repl.png" alt="" /><figcaption><code>main_planner</code> REPL Examples</figcaption>
-</figure>
+<p><img class="img-fluid" src="/static/exercises/tea-party/main_planner_repl.png"></p>
 <p><strong>You should not be performing any arithmetic computations in <code>main_planner</code>, all of the arithmetic is handled in your functions <code>tea_bags</code>, <code>treats</code>, and <code>cost</code>. Your <code>main_planner</code> function must call the other function definitions you have written to perform these calculations.</strong></p>
 <h2 id="making-the-program-runnable">5. Making the Program Runnable</h2>
 <p>Now that you have defined all of your functions, you can make your program runnable. Once again, we will use the same idiom from EX00 to make our Python module runnable. These lines need to come a few lines <em>after all function definitions</em>:</p>
@@ -198,17 +188,13 @@ Why do you think we are making use of a call to the `tea_bags` function when imp
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    main_planner(guests<span class="op">=</span><span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;How many guests are attending your tea party? &quot;</span>)))</span></code></pre></div>
 <p>After adding these lines to the end of your program, you should now be able to go to the “Run” tab of your program, be prompted for a guests count, and see the output of your program.</p>
 <p>Congrats! You can now plan a cozy tea party with your woodland CAMP110 friends!</p>
-<!-- <div class="fox-talk">
-<figure>
-![Fox Talk](/static/camp110/cozy-fox.png)
-</figure>
+<div class="fox-talk">
 <div class="message">
-**Fern the Philosophical Fox**
-
-
-</div>
-</div> -->
 <p><em>Why do you think you cannot place the lines <code>if __name__ == "__main__":</code> followed by <code>meal_planner(...)</code> at the top of your program? What happens if you try? Hint: Think about the rules of your environment diagram. What rules apply when the call to <code>meal_planner</code> are made? Specifically: what happens when following the Name Resolution rules?</em></p>
+</div>
+</div>
+<!-- 
+*Why do you think you cannot place the lines `if __name__ == "__main__":` followed by `meal_planner(...)` at the top of your program? What happens if you try? Hint: Think about the rules of your environment diagram. What rules apply when the call to `meal_planner` are made? Specifically: what happens when following the Name Resolution rules?* -->
 <h2 id="submitting-your-work-to-gradescope">6. Submitting Your Work to Gradescope</h2>
 <p>Now is a good time to submit your work to the autograder!</p>
 <p>In VSCode, open a new integrated Terminal with `Ctrl+Shift+``, or going to the Terminal menu and selecting “New Terminal”. We will learn more about what the terminal is and gain experience with “command line interfaces” later in the course. For now, enter the following command into the terminal and press enter:</p>
