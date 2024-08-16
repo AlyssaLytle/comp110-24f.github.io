@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1723744132.5498476">
+  <link rel="stylesheet" href="/static/styles.css?v=1723816107.9247606">
 </head>
 
 <body>
@@ -77,7 +77,7 @@
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><p><img src="/static/exercises/ex01/banner.png" /></p>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><!-- ![](/static/exercises/ex01/banner.png) -->
 <h2 id="overview">Overview</h2>
 <p>In this exercise, you will write a program to help you plan a cozy tea party. The program will ultimately ask the user for the number of guests and you will calculate the quantity of tea bags needed, the number of treats to accompany the tea, and the expected cost of the party.</p>
 <p>Here’s an example of using the program if you imagine we are trying to throw a giant tea party for you and 333 of your friends:</p>
@@ -145,15 +145,17 @@
 <img src="/static/exercises/ex01/treats_repl.png" alt="" /><figcaption><code>treats</code> REPL Examples</figcaption>
 </figure>
 <p>Try a few additional function calls to be sure your function is working as you expect!</p>
-<div class="fox-talk">
+<!-- <div class="fox-talk">
 <figure>
-<img src="/static/camp110/cozy-fox.png" title="fig:" alt="Fox Talk" />
+![Fox Talk](/static/camp110/cozy-fox.png)
 </figure>
 <div class="message">
-<p><strong>Fern the Philosophical Fox</strong></p>
-<p>Why do you think we are making use of a call to the <code>tea_bags</code> function when implementing the <code>treats</code> function? Could you imagine implementing <code>treats</code> without calling <code>tea_bags</code>? If so, suppose you later discovered your guests drank 3 teas each instead of 2. How many places in your program would you need to update to account for this change?</p>
+**Fern the Philosophical Fox**
+
+Why do you think we are making use of a call to the `tea_bags` function when implementing the `treats` function? Could you imagine implementing `treats` without calling `tea_bags`? If so, suppose you later discovered your guests drank 3 teas each instead of 2. How many places in your program would you need to update to account for this change?
 </div>
-</div>
+</div> -->
+<p><em>Why do you think we are making use of a call to the <code>tea_bags</code> function when implementing the <code>treats</code> function? Could you imagine implementing <code>treats</code> without calling <code>tea_bags</code>? If so, suppose you later discovered your guests drank 3 teas each instead of 2. How many places in your program would you need to update to account for this change?</em></p>
 <h2 id="defining-the-cost-function">3. Defining the <code>cost</code> Function</h2>
 <p>Now let’s implement a function to compute the cost of the tea bags and the treats combined. Add a couple blank lines following your <code>treats</code> function and then <strong>define a function</strong> with the following expectations:</p>
 <ul>
@@ -196,15 +198,17 @@
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    main_planner(guests<span class="op">=</span><span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;How many guests are attending your tea party? &quot;</span>)))</span></code></pre></div>
 <p>After adding these lines to the end of your program, you should now be able to go to the “Run” tab of your program, be prompted for a guests count, and see the output of your program.</p>
 <p>Congrats! You can now plan a cozy tea party with your woodland CAMP110 friends!</p>
-<div class="fox-talk">
+<!-- <div class="fox-talk">
 <figure>
-<img src="/static/camp110/cozy-fox.png" title="fig:" alt="Fox Talk" />
+![Fox Talk](/static/camp110/cozy-fox.png)
 </figure>
 <div class="message">
-<p><strong>Fern the Philosophical Fox</strong></p>
-<p>Why do you think you cannot place the lines <code>if __name__ == "__main__":</code> followed by <code>meal_planner(...)</code> at the top of your program? What happens if you try? Hint: Think about the rules of your environment diagram. What rules apply when the call to <code>meal_planner</code> are made? Specifically: what happens when following the Name Resolution rules?</p>
+**Fern the Philosophical Fox**
+
+
 </div>
-</div>
+</div> -->
+<p><em>Why do you think you cannot place the lines <code>if __name__ == "__main__":</code> followed by <code>meal_planner(...)</code> at the top of your program? What happens if you try? Hint: Think about the rules of your environment diagram. What rules apply when the call to <code>meal_planner</code> are made? Specifically: what happens when following the Name Resolution rules?</em></p>
 <h2 id="submitting-your-work-to-gradescope">6. Submitting Your Work to Gradescope</h2>
 <p>Now is a good time to submit your work to the autograder!</p>
 <p>In VSCode, open a new integrated Terminal with `Ctrl+Shift+``, or going to the Terminal menu and selecting “New Terminal”. We will learn more about what the terminal is and gain experience with “command line interfaces” later in the course. For now, enter the following command into the terminal and press enter:</p>
@@ -226,13 +230,7 @@
 </ol>
 <p>To see your commit on Github, in a web browser, navigate to <code>https://github.com/</code> and open your COMP110 course repository. You should see your work in <code>ex01_tea_party.py</code> backed up to GitHub. Notice above the file’s content’s you’ll see your commit message.</p>
 <h2 id="congratulations">8. Congratulations!</h2>
-<div class="owl-talk">
-<figure>
-<img src="/static/camp110/cozy-owl.png" title="fig:" alt="Owl Talk" />
-</figure>
-<div class="message">
-<p>Hi, I’m <strong>Owlivia the Observant</strong>!</p>
-<p>HOO! You have completed your first <em>real</em> exercise in the course! In this exercise, you experienced many big ideas you will encounter frequently on the trails ahead:</p>
+<p>You have completed your first <em>real</em> exercise in the course! In this exercise, you experienced many big ideas you will encounter frequently on the trails ahead:</p>
 <ul>
 <li>Defining a Function with a one <em>or more</em> parameters, return type, doc string, and return statement</li>
 <li>Defining a function and testing it in the REPL</li>
@@ -240,8 +238,6 @@
 <li>Defining a “main” function that produces output and “delegates” its primary logic to other simpler functions</li>
 <li>Defining a function that returns <code>None</code> and produces output (a “side-effect”!)</li>
 </ul>
-</div>
-</div>
 </div>
 
        
