@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> EX02 - Chardle - Input, Variables, and Conditionals - COMP110 - 24S</title>
+  <title> EX02 - Chardle - COMP110 - 24S</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1723950831.1769712">
+  <link rel="stylesheet" href="/static/styles.css?v=1723953170.2383597">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
   <div id="exercises-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>EX02 - Chardle - Input, Variables, and Conditionals</h1>
+        <h1>EX02 - Chardle</h1>
         <hr class="title" />
       </div>
     </div>
@@ -137,7 +137,9 @@
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    __author__ <span class="op">=</span> <span class="st">&quot;1234567890&quot;</span></span></code></pre></div>
 <p><strong>Important:</strong> As you progress through the exercise, comment your code! As a general rule, if 2 or more minutes are spent thinking about how to write a particular line or block of code, it’s a good idea to add a comment. Commenting is mandatory as it should be an integral part of the problem-solving process. More information on how commenting will be graded can be found in part 7.</p>
 <h2 id="part-1.-prompting-for-an-input-word">Part 1. Prompting for an Input Word</h2>
-<p>The first task of this program is to create a function, <code>input_word</code>, that will gather an input from the user. Your function is responsible for asking the user to enter a 5-character word. This input should be stored as a <code>str</code> local variable within your <code>input_word</code> function. <strong>Please choose meaningful, descriptive names for your variables.</strong> Write your prompts and diagnostic message such that you can reproduce the following in the shell after saving and running your program. Here is an example usage:</p>
+<p>The first task of this program is to create a function, <code>input_word</code>, that will gather an input from the user. It has <em>no</em> parameters and a <code>str</code> return type! Instead of a parameter, it’ll just use user input to determine a local variable.</p>
+<p>Your function is responsible for asking the user to enter a 5-character word. This input should be stored as a <code>str</code> local variable within your <code>input_word</code> function. <strong>Please choose meaningful, descriptive names for your variables.</strong></p>
+<p>Write your prompts and diagnostic message such that you can reproduce the following in the shell after saving and running your program. Here is an example usage:</p>
 <pre class="plaintext"><code>    &gt;&gt;&gt; input_word()
     Enter a 5-character word: camp
     Error: Word must contain 5 characters.
@@ -151,8 +153,9 @@
     &gt;&gt;&gt; input_word()
     Enter a 5-character word: ducky
     &#39;ducky&#39;</code></pre>
-<p>As seen in the final example usage (where the user entered ‘ducky’), once the word length was valid, the function <code>return</code>ed the word the user entered.</p>
-<p>So far, we have not implemented the ‘checking’ system for when a word is of valid length. To do this, once you have gathered the input, the function should also check <em>if</em> the length of the word is exactly 5 characters. You will need to use the <code>len</code> function, as described in <a href="/lessons/objects-data-types.html">Lesson 2 - Objects and Data Types</a>, in order to find the length of your input strings. Think about how you should implement this. Should you check that every word entered is of length 5 characters? Why or why not? Think about the <em>if</em> of each scenario. <em>If</em> is the user input is 5 characters long, what would you like to do? <em>If</em> is the user input is not 5 characters long, what would you like to do?</p>
+<p>If the input word has a length of 5, it should return that input word. If the input word has a length of anything other than 5, it should return that input word, but first it should print: <code>Error: Word must contain 5 characters.</code></p>
+<p>As seen in the final example usage (where the user entered ‘ducky’), the word <em>length</em> was valid, so the function <code>return</code>ed the word the user entered without printing the error message.</p>
+<p>So far, we have not implemented the ‘checking’ system for when a word is of valid length. To do this, once you have gathered the input, the function should also check <em>if</em> the length of the word is exactly 5 characters. You will need to use the <code>len</code> function, as described in the Objects and Data Types lesson, in order to find the length of your input strings. Think about how you should implement this. Should you check that every word entered is of length 5 characters? Why or why not? Think about the <em>if</em> of each scenario. <em>If</em> is the user input is 5 characters long, what would you like to do? <em>If</em> is the user input is not 5 characters long, what would you like to do?</p>
 <p><strong>WARNING:</strong> Autograding will very specifically be looking for <em>exactly</em> the format of lines output shown above. You will not see the <code>$</code> at your command-line prompt in VSCode, you can ignore that part. Otherwise, when you run the program on your machine with the same inputs as above, your printed results should look exactly the same.</p>
 <h2 id="part-2.-prompting-for-an-input-character">Part 2. Prompting for an Input Character</h2>
 <p>Now that we can obtain a word from the user and verify its length, we will do the same for obtaining a character. Create a function called <code>input_letter</code> that gathers input from the user. Like the <code>input_word</code> function, <code>input_letter</code> should prompt the user to enter a single character. This input should be stored as a local <code>str</code> variable within your <code>input_letter</code> function. Below is an example usage you should be able to reproduce exactly:</p>
@@ -172,30 +175,22 @@
 <h2 id="part-3.-checking-indices-for-matches">Part 3. Checking Indices for Matches</h2>
 <p>Now that we are able to gather input from <code>input_guess</code> and <code>input_letter</code>, our next task is to check if the input character matches any of the characters within the input word. Begin by defining a function named <code>contains_char</code>. This function will take two parameters: one that will store the input word and another for the letter guess, both of which are strings. The function won’t return any value. You will then need to check each index of the <code>word_guess</code> to see if it matches (hint: <em>is equal to</em>) the character in <code>letter_guess</code>.</p>
 <p>Soon you will learn a more efficient way of performing these checks using a concept called a <em>loop</em>. For now, you will need to check each of the five indices of the word string to see if it is equal to the character string. <em>If</em> so, <em>then</em> you should print out a message indicating the letter being searched for was found at a given index. Your goal in this part is to be able to do the following:</p>
-<pre class="plaintext"><code>    &gt;&gt;&gt; word: str = input_word()
-    Enter a 5-character word: bones
-    &gt;&gt;&gt; char: str = input_letter()
-    Enter a single character: e
-    &gt;&gt;&gt; contains_char(word, char)
-    Searching for e in bones
-    e found at index 3
-
-    &gt;&gt;&gt; contains_char(&quot;kitty&quot;, &quot;z&quot;)
+<pre class="plaintext"><code>    &gt;&gt;&gt; contains_char(word=&quot;kitty&quot;, letter=&quot;z&quot;)
     Searching for z in kitty
 
-    &gt;&gt;&gt; contains_char(input_guess(), input_letter())
+    &gt;&gt;&gt; contains_char(word=input_guess(), letter=input_letter())
     Enter a 5-character word: ponds
     Enter a single character: ducks
     Error: Character must be a single character.
     Searching for ducks in ponds
 
-    &gt;&gt;&gt; contains_char(input_guess(), input_letter())
+    &gt;&gt;&gt; contains_char(word=input_guess(), letter=input_letter())
     Enter a 5-character word: ponds
     Enter a single character: ducks
     Error: Character must be a single character.
     Searching for ducks in ponds
 
-    &gt;&gt;&gt; contains_char(input_guess(), input_letter())
+    &gt;&gt;&gt; contains_char(word=input_guess(), letter=input_letter())
     Enter a 5-character word: pzazz
     Enter a single character: z
     Searching for z in pzazz
@@ -206,34 +201,25 @@
 <p><strong>Be sure you have completed Part 3 before beginning Part 4!</strong></p>
 <p>Working in the same function, <code>contains_char</code>, establish a variable to <em>count</em> the number of matching characters. Before you find any matching characters, think about what value this variable should start with. Initialize this variable to that starting value. Each time you find a match, increase your counting variable’s value by 1. Finally, print out a message that indicates how many instances of the character you found in the input word.</p>
 <p>You will need to exactly match the output formatting of the examples below. Specifically, notice that there are different messages depending on whether no matches are found, a singular match is found, or multiple matches are found (i.e., <em>No instances</em> vs. <em>1 instance</em> vs. <em>2 instances</em>).</p>
-<pre class="plaintext"><code>    &gt;&gt;&gt; word: str = input_word()
-    Enter a 5-character word: bones
-    &gt;&gt;&gt; char: str = input_letter()
-    Enter a single character: e
-    &gt;&gt;&gt; contains_char(word, char)
-    Searching for e in bones
-    e found at index 3
-    1 instance of e found in bones
-
-    &gt;&gt;&gt; contains_char(&quot;kitty&quot;, &quot;z&quot;)
+<pre class="plaintext"><code>    &gt;&gt;&gt; contains_char(&quot;kitty&quot;, &quot;z&quot;)
     Searching for z in kitty
     No instances of z found in kitty
 
-    &gt;&gt;&gt; contains_char(input_word(), input_letter())
+    &gt;&gt;&gt; contains_char(word=input_word(), letter=input_letter())
     Enter a 5-character word: ponds
     Enter a single character: ducks
     Error: Character must be a single character.
     Searching for ducks in ponds
     No instances of ducks found in ponds
 
-    &gt;&gt;&gt; contains_char(input_word(), input_letter())
+    &gt;&gt;&gt; contains_char(word=input_word(), letter=input_letter())
     Enter a 5-character word: ponds
     Enter a single character: ducks
     Error: Character must be a single character.
     Searching for ducks in ponds
     No instances of ducks found in ponds
 
-    &gt;&gt;&gt; contains_char(input_word(), input_letter())
+    &gt;&gt;&gt; contains_char(word=input_word(), letter=input_letter())
     Enter a 5-character word: pzazz
     Enter a single character: z
     Searching for z in pzazz
@@ -242,46 +228,21 @@
     z found at index 4
     3 instances of z found in pzazz</code></pre>
 <h2 id="part-5.-exiting-early-for-invalid-inputs">Part 5. Exiting Early for Invalid Inputs</h2>
-<p>What happens if you input a word with fewer than 5 characters? Or you input a “char” that is more than one character, or none at all? As seen in part 3, when the user put in ‘ducks’ as the single character, they were able to recieve the error message but the code continued to run as the call to <code>contains_char</code> was still executed. We don’t want this to happen. It’s good practice to handle bad input from an end-user gracefully in your programs. Our strategy, for now, will be to simply print an error message and then exit the program early.</p>
+<p>What happens if you input a word with fewer than 5 characters? Or you input a “char” that is more than one character, or none at all? As seen in part 3, when the user put in ‘ducks’ as the single character, they were able to recieve the error message but the code continued to run as the call to <code>contains_char</code> was still executed. We don’t want this to happen. It’s good practice to handle bad input from an end-user gracefully in your programs. Our strategy, for now, will be to modify both <code>input_word</code> and <code>input_letter</code> to exit the program early after it prints the error message but <em>before</em> it returns something.</p>
 <p>There is a special built-in function called <code>exit()</code> that will send a signal to your system and tell the program to quit at that point, not continuing on further in the program. Before attempting to implement the following behavior in your program, think about where it logically <em>makes sense</em> to try adding these checks for correct input.</p>
 <p>Here is how your program should work after completing this part:</p>
-<pre class="plaintext"><code>    &gt;&gt;&gt; contains_char(input_word(), input_letter())
+<pre class="plaintext"><code>    &gt;&gt;&gt; input_word()
     Enter a 5-character word: pzazzzz
     Error: Word must contain 5 characters.
 
-    &gt;&gt;&gt; contains_char(input_word(), input_letter())
-    Enter a 5-character word: heels
+    &gt;&gt;&gt; input_letter()
     Enter a single character: tar
-    Error: Character must be a single character.
-
-    &gt;&gt;&gt; contains_char(input_word(), input_letter())
-    Enter a 5-character word: heels
-    Enter a single character: 
-    Error: Character must be a single character.
-
-    &gt;&gt;&gt; contains_char(input_word(), input_letter())
-    Enter a 5-character word: heels
-    Enter a single character: h
-    Searching for h in heels
-    h found at index 0
-    1 instance of h found in heels
-
-    &gt;&gt;&gt; word: str = input_word()
-    Enter a 5-character word: bones
-    &gt;&gt;&gt; char: str = input_letter()
-    Enter a single character: e
-    &gt;&gt;&gt; contains_char(word, char)
-    Searching for e in bones
-    e found at index 3
-    1 instance of e found in bones
-
-    &gt;&gt;&gt; contains_char(&quot;kitty&quot;, &quot;z&quot;)
-    Searching for z in kitty
-    No instances of z found in kitty</code></pre>
+    Error: Character must be a single character.</code></pre>
 <h2 id="part-6.-putting-everything-together">Part 6. Putting everything together</h2>
 <p>The <code>main</code> function is the entry point of the Chardle game. It coordinates the flow of the game by calling other functions to gather user inputs and perform the necessary operations. Instead of repeatedly calling each function individually, which can be cumbersome (as seen from the previous example usages), the <code>main</code> function simplifies this process. When called, it automatically handles all the function calls and variable assignments needed to run the game smoothly.</p>
-<p>Start by defining a function named <code>main</code> that does not return any value. Call <code>input_word</code> to obtain a 5-character word from the user. Make sure to store this word. Next, do the same for <code>input_letter</code>. Once you have stored both the word and character, you can now check the indicies of the word to see if there are any matches to the character. To do this, we made a function called <code>contains_char</code>.</p>
-<p>Once your <code>main</code> method is defined, all you need to do is call it in order to test your code. Here is how your program should work after completing this part:</p>
+<p>Start by defining a function named <code>main</code> that does not take any parameters as input and does not return any value. It should simply call the functions we just defined:</p>
+<p><code>contains_char(word=input_guess(), letter=input_letter())</code></p>
+<p>Here is how your program should work after completing this part:</p>
 <pre class="plaintext"><code>    &gt;&gt;&gt; main()
     Enter a 5-character word: lives
     Enter a single character: l
