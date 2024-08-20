@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Practice Memory Diagram - COMP110 - 24S</title>
+  <title> Benjamin Eldridge - COMP110 - 24S</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1724178543.6682796">
+  <link rel="stylesheet" href="/static/styles.css?v=1724178532.8855064">
 </head>
 
 <body>
@@ -44,67 +44,43 @@
     </div>
   </nav>
 
-  <div id="lessons-page" class="container">
+  <div id="profile-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>Practice Memory Diagram</h1>
+        <h1>Benjamin Eldridge</h1>
         <hr class="title" />
       </div>
     </div>
 
-    <script src="/static/scripts/toggle-handler.js"></script>
-    
-    <div class="row px-4">
-        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
-            <div id="menu-overview" class="link-page horizon-box">
-                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
-                <div id="overview-links">
-                    <div id="TOC" role="doc-toc">
-                        <ul class="overview-item"><ul>
-<li><a href="#snippet">Snippet</a></li>
-<li><a href="#solution">Solution</a></li>
-</ul>
-</</ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="snippet">Snippet</h1>
-<pre><code>    starting = dict[str, list[str]] = {}
-    starting[&quot;2017&quot;] = [&quot;Berry&quot;, &quot;Meeks&quot;, &quot;Jackson&quot;]
-    starting[&quot;2023&quot;] = [&quot;Love&quot;, &quot;Bacot&quot;, &quot;Black&quot;]
-
-    print(starting[&quot;2017&quot;][2])
-    print(starting[&quot;2023&quot;])
-    starting[&quot;2023&quot;][2] = &quot;Johnson&quot;
-    print(starting[&quot;2023&quot;])</code></pre>
-<h1 id="solution">Solution</h1>
-<p><img class="img-fluid" src="/static/practice-mem-diagrams/lineup-sol.png" alt="Image Description Here"  /></p>
-<!-- *Image Description:*
-The memory diagram provided contains three main components: Stack, Heap, and Output.
-
-Stack:
-* The Stack section contains a single frame labeled "Globals."
-* Inside Globals, there is a variable named starting pointing to a list on the Heap.
-
-Heap:
-* The first part is a dictionary object with string keys and lists of strings for values. There are two keys: "2017" and "2023." Each key points to a different list.
-* The second part consists of two lists of strings. Each list contains five elements with indices from 0 to 4.
-* The first list contains the following strings: "Berry", "Meeks", "Jackson", "Pinson", and "Hicks".
-* The second list contains the strings: "Love", "Bacot", "Black", "Johnson" (with “Nance” crossed-out), and "Davis".
-
-The output section has three outputs:
-* The string “Jackson”
-* The list [“Love”, “Bacot”, “Black”, “Nance”, “Davis”]
-* The list [“Love”, “Bacot”, “Black”, “Johnson”, “Davis”] -->
+    <div class="container box">
+        <div class="row"><div class="col">
+                <div class="content"><figure>
+<img src="../../../static/profile-photos/benjaben.png" alt="" /><figcaption>profile-photo</figcaption>
+</figure>
+<h2 id="pronouns">Pronouns</h2>
+<p>he/him/his</p>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<h2 id="hometown">Hometown</h2>
+<p>Oak Island, North Carolina</p>
+<h2 id="unc-status">UNC Status</h2>
+<p>Class of 2025</p>
+<h2 id="major">Major</h2>
+<p>Mathematics and Computer Science</p>
+<p></div>
+            </div><div class="col">
+                <div class="content"></p>
+<h2 id="interests">Interests</h2>
+<p>Chess, urbanism, cooking, Magic: The Gathering, video games</p>
+<h2 id="non-academic-fun-fact">Non-academic fun fact</h2>
+<p>I broke my arms three times over the course of middle school, so I don’t play sports much anymore</p>
 </div>
-
-       
-
-    </div> 
+            </div></div>
+    </div>
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s):        Created by Coralee Rogers, Reviewed by Alyssa Lytle</span>
+      <span> Contributor(s): Benjamin Eldridge</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
