@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1724773720.0386658">
+  <link rel="stylesheet" href="/static/styles.css?v=1724774441.879569">
 </head>
 
 <body>
@@ -62,7 +62,8 @@
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
 <li><a href="#introduction-and-setup">Introduction and Setup</a></li>
-<li><a href="#function-definition">Function Definition</a></li>
+<li><a href="#function-definition-mimic">Function Definition: <code>mimic</code></a></li>
+<li><a href="#function-definition-main">Function Definition: <code>main</code></a></li>
 <li><a href="#calling-your-function-inside-the-file">Calling Your Function Inside the File</a></li>
 <li><a href="#prompting-for-user-input">Prompting For User Input</a></li>
 <li><a href="#submission">Submission</a></li>
@@ -78,7 +79,7 @@
 <p>To start, right click in the “Explorer” pane of your workspace and select “New Folder…”. Name this new folder <code>CQs</code>. This is where you will be writing and storing your challenge questions this semester!</p>
 <p>Now, right click on your “CQs” folder and select “New File…”. Name this file <code>cq00_functions.py</code>. <em>The <code>.py</code> at the end of the file name is necessary, or your program won’t run!</em></p>
 <p>Make sure to initialize your file with a docstring and <code>__author__</code> variable just like you did in EX00!</p>
-<h2 id="function-definition">Function Definition</h2>
+<h2 id="function-definition-mimic">Function Definition: <code>mimic</code></h2>
 <p>Now, you are going to write a function on your own! This function will just take your input and repeat it back to you! <em>Define a function</em> with the following expectations:</p>
 <ul>
 <li>Name: <code>mimic</code></li>
@@ -92,24 +93,37 @@
 <p>The function should simply return <code>message</code> back to you!</p>
 <p>You can test this function by <em>calling</em> it under the “Interact” tab of your trailhead! You should get behavior looking something like this:</p>
 <p><img class="img-fluid" src="/static/cqs/cq00/mimic.png"></p>
+<h2 id="function-definition-main">Function Definition: <code>main</code></h2>
+<p>Now you are going to write your <code>main</code> function! This is a common convention in programming. The <code>main</code> function pulls together your functions, which are building blocks, into a main function that implements the high-level logic of your program.</p>
+<p>This program is only going to print the result of calling <code>mimic</code>. It won’t actually <em>return</em> anything, so you can declare it’s return type as <code>None</code>.</p>
+<p>Define the signature of this function with the following expectations:</p>
+<ul>
+<li>Name: <code>main</code></li>
+<li>Parameters: no parameters</li>
+<li>Return type: <code>None</code></li>
+<li>Add a Docstring describing the purpose of the function.</li>
+</ul>
+<p>The body of your function should contain the following line:</p>
+<pre><code> print(mimic(message=&quot;Howdy!&quot;))</code></pre>
+<p>To understand what this line of code is doing, just like in math, you can expect to work your way from the innermost parentheses outward.</p>
+<p>You’ll see that it is <em>calling</em> the <code>mimic</code> function with the argument <code>message="Howdy!"</code>, and then in the outer parentheses is it <em>printing</em> the result. This is called a <em>nested function call</em> because the result (aka <em>return value</em>) of the <code>mimic</code> function is then being passed as an argument to the <code>print</code> function.</p>
 <h2 id="calling-your-function-inside-the-file">Calling Your Function Inside the File</h2>
 <p>Before you do anything else, try clicking on the “Run” tab in your trailhead. You’ll see something like this.</p>
 <p><img class="img-fluid" src="/static/cqs/cq00/no-output.png"></p>
-<p>This is to be expected because <code>cq00_functions.py</code> only contains a function definition; nothing has been called or printed!</p>
-<p>Let’s edit the module to call the function when it’s run! At the bottom of your <code>cq00_functions.py</code> file, add the following lines of code to the bottom of your file (note the indentation, as it is important!):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="bu">print</span>(mimic(message<span class="op">=</span><span class="st">&quot;Howdy!&quot;</span>))</span></code></pre></div>
+<p>This is to be expected because so far <code>cq00_functions.py</code> only contains a function <em>definitions</em>; nothing has been <em>called</em> in your file!</p>
+<p>Let’s edit the module to <em>call</em> the <code>main</code> function when it’s run! At the bottom of your <code>cq00_functions.py</code> file, add the following lines of code to the bottom of your file (note the indentation, as it is important!):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>  main()</span></code></pre></div>
 <p>Before revealing what this code is doing, please try saving your code and look under the “Run” tab in the Trailhead. You should see something like this:</p>
 <p><img class="img-fluid" src="/static/cqs/cq00/mimic-module-call.png"></p>
-<p>Now, come back to the code, and try and break down the second line for yourself. Just like in math, you can expect to work your way from the innermost parentheses outward.</p>
-<p>You’ll see that it is <em>calling</em> the <code>mimic</code> function with the argument <code>message="Howdy!"</code>, and then in the outer parentheses is it <em>printing</em> the result. This is called a <em>nested function call</em> because the result (aka <em>return value</em>) of the <code>mimic</code> function is then being passed as an argument to the <code>print</code> function.</p>
+<p>You’ll notice it is <em>calling</em> the <code>main</code> function which in turn calls the <code>mimic</code> function with the argument <code>message="Howdy!"</code> and prints that result!</p>
 <p>The first line, <code>if __name__ == "__main__":</code> is a special kind of statement called a <em>conditional statement</em> you’ll learn about in a few weeks. The effect it has here is when you run this program in the “Run” tab, the indented code beneath the <code>if</code> statement will be evaluated. However, when you load this program in the REPL of the “Interact” tab, the code beneath the if statement will not be run. This gives us the best of both worlds! We will learn more about <em>how</em> this works in the future, but for now it’s good to just know that it provides you with this functionality!</p>
 <h2 id="prompting-for-user-input">Prompting For User Input</h2>
 <p>Finally, we are going to make our module a little more interactive by prompting the user for input!</p>
 <p>Change the line:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="bu">print</span>(mimic(message<span class="op">=</span><span class="st">&quot;Howdy!&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">print</span>(mimic(message<span class="op">=</span><span class="st">&quot;Howdy!&quot;</span>))</span></code></pre></div>
 <p>to:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="bu">print</span>(mimic(message<span class="op">=</span><span class="bu">input</span>(<span class="st">&quot;What is your message?&quot;</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="bu">print</span>(mimic(message<span class="op">=</span><span class="bu">input</span>(<span class="st">&quot;What is your message?&quot;</span>)))</span></code></pre></div>
 <p>Again, before we explain what this does, try saving your code and look under the “Run” tab in the Trailhead. You should see that it prompts you for a message. Type in any message and hit enter. It should repeat that message right back to you!</p>
 <p>Similar to the <code>print</code> function, <code>input</code> is a function that has built-in behavior. The <em>argument</em> will be whatever message you want displayed to the user. (E.g. <code>"What is your message?"</code>) The <em>return</em> value will be a <code>str</code> with whatever input the user has typed. Notice that it is passing the return value of the <code>input</code> function as an argument to the <code>mimic</code> function, which is why it repeats the user input back to you!</p>
 <h2 id="submission">Submission</h2>
