@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1724774441.879569">
+  <link rel="stylesheet" href="/static/styles.css?v=1724775073.8179035">
 </head>
 
 <body>
@@ -107,6 +107,8 @@
 <pre><code> print(mimic(message=&quot;Howdy!&quot;))</code></pre>
 <p>To understand what this line of code is doing, just like in math, you can expect to work your way from the innermost parentheses outward.</p>
 <p>You’ll see that it is <em>calling</em> the <code>mimic</code> function with the argument <code>message="Howdy!"</code>, and then in the outer parentheses is it <em>printing</em> the result. This is called a <em>nested function call</em> because the result (aka <em>return value</em>) of the <code>mimic</code> function is then being passed as an argument to the <code>print</code> function.</p>
+<p>You can test this function by <em>calling</em> it under the “Interact” tab of your trailhead! You should get behavior looking something like this:</p>
+<p><img class="img-fluid" src="/static/cqs/cq00/main_call.png"></p>
 <h2 id="calling-your-function-inside-the-file">Calling Your Function Inside the File</h2>
 <p>Before you do anything else, try clicking on the “Run” tab in your trailhead. You’ll see something like this.</p>
 <p><img class="img-fluid" src="/static/cqs/cq00/no-output.png"></p>
@@ -115,8 +117,8 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>  main()</span></code></pre></div>
 <p>Before revealing what this code is doing, please try saving your code and look under the “Run” tab in the Trailhead. You should see something like this:</p>
-<p><img class="img-fluid" src="/static/cqs/cq00/mimic-module-call.png"></p>
-<p>You’ll notice it is <em>calling</em> the <code>main</code> function which in turn calls the <code>mimic</code> function with the argument <code>message="Howdy!"</code> and prints that result!</p>
+<p><img class="img-fluid" src="/static/cqs/cq00/howdy_output.png"></p>
+<p>You’ll notice it is <em>calling</em> the <code>main</code> function which in turn prints the result of calling the <code>mimic</code> function with the argument <code>message="Howdy!"</code>!</p>
 <p>The first line, <code>if __name__ == "__main__":</code> is a special kind of statement called a <em>conditional statement</em> you’ll learn about in a few weeks. The effect it has here is when you run this program in the “Run” tab, the indented code beneath the <code>if</code> statement will be evaluated. However, when you load this program in the REPL of the “Interact” tab, the code beneath the if statement will not be run. This gives us the best of both worlds! We will learn more about <em>how</em> this works in the future, but for now it’s good to just know that it provides you with this functionality!</p>
 <h2 id="prompting-for-user-input">Prompting For User Input</h2>
 <p>Finally, we are going to make our module a little more interactive by prompting the user for input!</p>
@@ -126,6 +128,8 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="bu">print</span>(mimic(message<span class="op">=</span><span class="bu">input</span>(<span class="st">&quot;What is your message?&quot;</span>)))</span></code></pre></div>
 <p>Again, before we explain what this does, try saving your code and look under the “Run” tab in the Trailhead. You should see that it prompts you for a message. Type in any message and hit enter. It should repeat that message right back to you!</p>
 <p>Similar to the <code>print</code> function, <code>input</code> is a function that has built-in behavior. The <em>argument</em> will be whatever message you want displayed to the user. (E.g. <code>"What is your message?"</code>) The <em>return</em> value will be a <code>str</code> with whatever input the user has typed. Notice that it is passing the return value of the <code>input</code> function as an argument to the <code>mimic</code> function, which is why it repeats the user input back to you!</p>
+<p>Try it out in your trailhead! You should see something like this!</p>
+<p><img class="img-fluid" src="/static/cqs/cq00/name_main_call.png"></p>
 <h2 id="submission">Submission</h2>
 <p>Just like you did for EX00, create a .zip file by running the following command in your terminal:</p>
 <p><code>python -m tools.submission CQs/cq00_functions.py</code></p>
