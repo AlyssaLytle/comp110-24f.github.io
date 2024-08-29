@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1724961669.0642228">
+  <link rel="stylesheet" href="/static/styles.css?v=1724965510.6418316">
 </head>
 
 <body>
@@ -64,6 +64,8 @@
 <li><a href="#questions">Questions</a>
 <ul>
 <li><a href="#conceptual">Conceptual</a></li>
+<li><a href="#spot-the-error">Spot the error</a></li>
+<li><a href="#function-writing">Function writing</a></li>
 </ul></li>
 <li><a href="#solutions">Solutions</a>
 <ul>
@@ -78,7 +80,59 @@
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="questions">Questions</h1>
 <h2 id="conceptual">Conceptual</h2>
 <ol type="1">
-<li>The following questions will be in reference to this code block:</li>
+<li>What is a function call, and how does it differ from a function definition?</li>
+<li>What is the difference between parameters and arguments in the context of functions?</li>
+<li>What is a function signature, and why is it significant?</li>
+<li>Can the return statement in a function be replaced with a print statement? Why or why not?</li>
+<li>Does a function need to have a return statement? Why or why not?</li>
+<li>What will follow the arrow in a function signature if the return statement is “return None”? What does this mean?</li>
+<li>Use the following to write the format of a function signature. You might not need to use all and can use any multiple times: <code>def</code>, (), =, function_name, param_1, param_2, param_n, arg_1, arg_2, arg_n, type_of_value, -&gt;, :</li>
+<li>Use the following to write the format of a function call. You might not need to use all and can use any multiple times: <code>def</code>, (), =, function_name, param_1, param_2, param_n, arg_1, arg_2, arg_n, type_of_value, -&gt;, :</li>
+<li>When you call a function, once the function is executed, where do you return back to?</li>
+<li>When you call a function, is the return value outputted? If yes, explain how? If not, explain how you could print the return value?</li>
+<li>If you never encounter a <code>return</code> statement in your function, what is your return value?</li>
+<li>What is the purpose of the <code>return</code> keyword, and what happens if it is omitted in a function?</li>
+<li>What happens if you call a function before it is defined? Why?</li>
+<li>How can you pass a function as an argument to another function? How does this work? Provide an example.</li>
+</ol>
+<p><a href="#conceptual-solutions">Solutions</a></p>
+<h2 id="spot-the-error">Spot the error</h2>
+<ol type="1">
+<li>Looking at the following code, is there something wrong with the code? If yes, what is it and why is it a problem?</li>
+</ol>
+<pre><code>def fuel_needed(distance, mpg):
+   return distance / mpg
+
+def total_fuel_cost(distance, mpg, price_per_gallon):
+   fuel_needed(distance, mpg) * price_per_gallon
+
+# Example usage:
+print(total_fuel_cost(distance=300, mpg=25, price_per_gallon=4))</code></pre>
+<ol start="2" type="1">
+<li>Looking at the following code, is there something wrong with the code? If yes, what is it and why is it a problem?</li>
+</ol>
+<pre><code>def fuel_needed(distance, mpg):
+   return distance / mpg
+
+def total_fuel_cost(distance, mpg, price_per_gallon):
+   print(fuel_needed(distance, mpg) * price_per_gallon)
+
+# Example usage:
+total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)</code></pre>
+<ol start="3" type="1">
+<li>Looking at the following code, is there something wrong with the code? If yes, what is it and why is it a problem?</li>
+</ol>
+<pre><code>def fuel_needed(distance, mpg):
+   return distance / mpg
+
+def total_fuel_cost(distance, mpg, price_per_gallon):
+   print(fuel_needed(distance, mpg) * price_per_gallon)
+
+# Example usage:
+total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)</code></pre>
+<h2 id="function-writing">Function writing</h2>
+<ol type="1">
+<li>Define a function <code>greet</code>. It will take a single parameter, <code>name</code>, which is a string. The function will print a greeting message that includes the name of the person you would like to greet, along with additional details about the name. Specifically, it will print a message that states what the first and last letters of the name are. It should then <code>return</code> a string expressing happiness to see the person. Refer to the example usage to help construct your function body. Define a <code>main</code> function. This will be the entrypoint to your program. Inside the <code>main</code> function, call the <code>greet</code> function with the argument as specified by the example usage. The <code>main</code> function should print the value <code>return</code>ed by the <code>greet</code> function. Finally, call your <code>main</code> function.</li>
 </ol>
 <pre><code>    def greet(name: str) -&gt; str:
         print(&quot;Hello &quot; + name)
@@ -87,16 +141,17 @@
     def main() -&gt; None:
         print(greet(name=&quot;Lizzie&quot;))
     
-    main()</code></pre>
-<ol type="1">
-<li><p>On what line(s) is there a <em>return type</em> declaration?</p></li>
+    main()
+</code></pre>
+<p>Answer the following questions about your code. Make sure you check your code by looking at the solution before doing this. Diagram your code snippet.</p>
+<p>``` 1. On what line(s) is there a <em>return type</em> declaration?</p>
+<ol start="2" type="1">
 <li><p>On what line(s) is there a <em>signature</em>?</p></li>
 <li><p>On what line(s) are there <em>arguments</em>?</p></li>
 <li><p>On what line(s) are there <em>parameters</em> declared?</p></li>
 <li><p>On what line(s) is something <em>returned</em>?</p></li>
 <li><p>On what line(s) is something <em>printed</em>?</p></li>
 </ol>
-<p><em>(Extra Practice: Try diagramming this!)</em></p>
 <p><a href="#conceptual-solutions">Solutions</a></p>
 <h1 id="solutions">Solutions</h1>
 <h2 id="conceptual-solutions">Conceptual Solutions</h2>
@@ -115,7 +170,7 @@
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s):        Alyssa Lytle,        Megan Zhang, David Karash</span>
+      <span> Contributor(s): Alyssa Lytle</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
