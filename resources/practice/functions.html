@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1725032881.2648268">
+  <link rel="stylesheet" href="/static/styles.css?v=1725049506.2970738">
 </head>
 
 <body>
@@ -65,6 +65,7 @@
 <ul>
 <li><a href="#conceptual">Conceptual</a></li>
 <li><a href="#spot-the-error">Spot the error</a></li>
+<li><a href="#calling-functions">Calling functions</a></li>
 <li><a href="#function-writing">Function writing</a></li>
 </ul></li>
 <li><a href="#solutions">Solutions</a>
@@ -130,6 +131,30 @@ def total_fuel_cost(distance, mpg, price_per_gallon):
 
 # Example usage:
 total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)</code></pre>
+<h2 id="calling-functions">Calling functions</h2>
+<ol type="1">
+<li>For the following code snippet, write a line of code that will result in the following output:</li>
+</ol>
+<pre><code>def flavor(taste: str, percent: float) -&gt; None:
+    print(&quot;This flavor is &quot; + str(percent) + &quot;% &quot; + taste)</code></pre>
+<p>Output:</p>
+<pre class="plaintext"><code>    $ python -m flavor
+    This flavor is 100% umami</code></pre>
+<ol start="2" type="1">
+<li>For the following code snippet, write a line of code that will call the <code>main</code> function. Next, write a line of code to be inserted within the body of the <code>main</code> function. This line should call the <code>eat</code> function with the argument passed when the main function was called.</li>
+</ol>
+<pre><code>def eat(food: str) -&gt; None:
+    print(&quot;Eating &quot; + food)
+
+def main(food: str) -&gt; None:
+    food_item = &quot;apple&quot;
+    eat(food=food)
+</code></pre>
+<ol start="3" type="1">
+<li>For the following code snippet, write a line of code that will call the <code>have_done</code> function with the arguments <code>"homework"</code> and <code>False</code>. If you wanted to print the string created by the <code>have_done</code> function, how would you modify your function call?</li>
+</ol>
+<pre><code>def have_done(task, completed) -&gt; str:
+    return &quot;Completed &quot; + task + &quot;: &quot; + str(completed)</code></pre>
 <h2 id="function-writing">Function writing</h2>
 <ol type="1">
 <li>Define a function <code>greet</code>. It will take a single parameter, <code>name</code>, which is a string. The function will print a greeting message that includes the name of the person you would like to greet, along with additional details about the name. Specifically, it will print a message that states what the first and last letters of the name are. It should then <code>return</code> a string expressing happiness to see the person. Refer to the example usage to help construct your function body. Define a <code>main</code> function. This will be the entrypoint to your program. Inside the <code>main</code> function, call the <code>greet</code> function with the argument as specified by the example usage. The <code>main</code> function should print the value <code>return</code>ed by the <code>greet</code> function. Finally, call your <code>main</code> function.</li>
