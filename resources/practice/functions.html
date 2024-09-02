@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1725143614.426226">
+  <link rel="stylesheet" href="/static/styles.css?v=1725241053.634763">
 </head>
 
 <body>
@@ -68,10 +68,6 @@
 <li><a href="#calling-functions">Calling functions</a></li>
 <li><a href="#function-writing">Function writing</a></li>
 </ul></li>
-<li><a href="#solutions">Solutions</a>
-<ul>
-<li><a href="#conceptual-solutions">Conceptual Solutions</a></li>
-</ul></li>
 </ul>
 </</ul>
                     </div>
@@ -87,8 +83,8 @@
 <li>Can the return statement in a function be replaced with a print statement? Why or why not?</li>
 <li>Does a function need to have a return statement? Why or why not?</li>
 <li>What will follow the arrow in a function signature if the return statement is “return None”? What does this mean?</li>
-<li>Use the following to write the format of a function signature. You might not need to use all and can use any multiple times: <code>def</code>, (), =, function_name, param_1, param_2, param_n, arg_1, arg_2, arg_n, type_of_value, -&gt;, :</li>
-<li>Use the following to write the format of a function call. You might not need to use all and can use any multiple times: <code>def</code>, (), =, function_name, param_1, param_2, param_n, arg_1, arg_2, arg_n, type_of_value, -&gt;, :</li>
+<li>Use the following to write the format of a function signature. You might not need to use all and can use any multiple times: <code>def</code>, <code>()</code>, <code>=</code>, <code>function_name</code>, <code>param_1</code>, <code>param_2</code>, <code>param_n</code>, <code>arg_1</code>, <code>arg_2</code>, <code>arg_n</code>, <code>type_of_value</code>, <code>-&gt;</code>, <code>:</code></li>
+<li>Use the following to write the format of a function call. You might not need to use all and can use any multiple times: <code>def</code>, <code>()</code>, <code>=</code>, <code>function_name</code>, <code>param_1</code>, <code>param_2</code>, <code>param_n</code>, <code>arg_1</code>, <code>arg_2</code>, <code>arg_n</code>, <code>type_of_value</code>, <code>-&gt;</code>, <code>:</code></li>
 <li>When you call a function, once the function is executed, where do you return back to?</li>
 <li>When you call a function, is the return value outputted? If yes, explain how? If not, explain how you could print the return value?</li>
 <li>If you never encounter a <code>return</code> statement in your function, what is your return value?</li>
@@ -99,7 +95,7 @@
 <p><a href="#conceptual-solutions">Solutions</a></p>
 <h2 id="spot-the-error">Spot the error</h2>
 <ol type="1">
-<li>Looking at the following code, is there something wrong with the code? If yes, what is it and why is it a problem?</li>
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
 </ol>
 <pre><code>def fuel_needed(distance, mpg):
    return distance / mpg
@@ -110,7 +106,7 @@ def total_fuel_cost(distance, mpg, price_per_gallon):
 # Example usage:
 print(total_fuel_cost(distance=300, mpg=25, price_per_gallon=4))</code></pre>
 <ol start="2" type="1">
-<li>Looking at the following code, is there something wrong with the code? If yes, what is it and why is it a problem?</li>
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
 </ol>
 <pre><code>def fuel_needed(distance, mpg):
    return distance / mpg
@@ -121,7 +117,7 @@ def total_fuel_cost(distance, mpg, price_per_gallon):
 # Example usage:
 total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)</code></pre>
 <ol start="3" type="1">
-<li>Looking at the following code, is there something wrong with the code? If yes, what is it and why is it a problem?</li>
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
 </ol>
 <pre><code>def fuel_needed(distance, mpg):
    return distance / mpg
@@ -159,35 +155,54 @@ def main(food: str) -&gt; None:
 <ol type="1">
 <li>Define a function <code>greet</code>. It will take a single parameter, <code>name</code>, which is a string. The function will print a greeting message that includes the name of the person you would like to greet, along with additional details about the name. Specifically, it will print a message that states what the first and last letters of the name are. It should then <code>return</code> a string expressing happiness to see the person. Refer to the example usage to help construct your function body. Define a <code>main</code> function. This will be the entrypoint to your program. Inside the <code>main</code> function, call the <code>greet</code> function with the argument as specified by the example usage. The <code>main</code> function should print the value <code>return</code>ed by the <code>greet</code> function. Finally, call your <code>main</code> function.</li>
 </ol>
-<pre><code>    def greet(name: str) -&gt; str:
-        print(&quot;Hello &quot; + name)
-        return &quot;I&#39;m so happy to see you &quot; + name 
-    
-    def main() -&gt; None:
-        print(greet(name=&quot;Lizzie&quot;))
-    
-    main()
-</code></pre>
-<p>Answer the following questions about your code. Make sure you check your code by looking at the solution before doing this. Diagram your code snippet.</p>
-<p>``` 1. On what line(s) is there a <em>return type</em> declaration?</p>
-<ol start="2" type="1">
-<li><p>On what line(s) is there a <em>signature</em>?</p></li>
-<li><p>On what line(s) are there <em>arguments</em>?</p></li>
-<li><p>On what line(s) are there <em>parameters</em> declared?</p></li>
-<li><p>On what line(s) is something <em>returned</em>?</p></li>
-<li><p>On what line(s) is something <em>printed</em>?</p></li>
+<pre><code>def greet(name: str) -&gt; str:
+    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + name[0] + &quot; and ends with an &quot; + name[len(name) - 1])
+    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
+
+def main() -&gt; None:
+    print(greet(name=&quot;Molly&quot;))
+
+# Example usage: 
+main()</code></pre>
+<ol start="5" type="1">
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
 </ol>
-<p><a href="#conceptual-solutions">Solutions</a></p>
-<h1 id="solutions">Solutions</h1>
-<h2 id="conceptual-solutions">Conceptual Solutions</h2>
-<ol type="1">
-<li><p>1 (optional: 5)</p></li>
-<li><p>1, 5</p></li>
-<li><p>6 (optional: 8)</p></li>
-<li><p>1 (optional: 5)</p></li>
-<li><p>3</p></li>
-<li><p>2, 6</p></li>
+<pre><code>def greet(name: str) -&gt; str:
+    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
+    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
+
+
+def main() -&gt; None:
+    print(greet(name=&quot;Molly&quot;))
+
+# Example usage: 
+main()</code></pre>
+<ol start="6" type="1">
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
 </ol>
+<pre><code>    greet(name: str) -&gt; str:
+    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
+    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
+
+
+def main() -&gt; None:
+    print(greet(name=&quot;Molly&quot;))
+
+# Example usage: 
+main()</code></pre>
+<ol start="7" type="1">
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
+</ol>
+<pre><code>def greet(name: str) -&gt; str:
+    prtin(&quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;)
+    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
+
+
+def main() -&gt; None:
+    print(greet(name=&quot;Molly&quot;))
+
+# Example usage: 
+main()</code></pre>
 </div>
 
        
@@ -195,7 +210,7 @@ def main(food: str) -&gt; None:
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s): Alyssa Lytle</span>
+      <span> Contributor(s):        Alyssa Lytle,        Megan Zhang, David Karash</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
