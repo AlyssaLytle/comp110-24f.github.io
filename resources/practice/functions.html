@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1725241053.634763">
+  <link rel="stylesheet" href="/static/styles.css?v=1725241197.429648">
 </head>
 
 <body>
@@ -64,10 +64,14 @@
 <li><a href="#questions">Questions</a>
 <ul>
 <li><a href="#conceptual">Conceptual</a></li>
-<li><a href="#spot-the-error">Spot the error</a></li>
 <li><a href="#calling-functions">Calling functions</a></li>
-<li><a href="#function-writing">Function writing</a></li>
+<li><a href="#spot-the-error">Spot the error</a></li>
 </ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#conceptual-1">Conceptual</a></li>
+</ul></li>
+<li><a href="#pass-the-return-value-of-double-as-an-argument-to-add_five">Pass the return value of double() as an argument to add_five()</a></li>
 </ul>
 </</ul>
                     </div>
@@ -93,40 +97,6 @@
 <li>How can you pass a function as an argument to another function? How does this work? Provide an example.</li>
 </ol>
 <p><a href="#conceptual-solutions">Solutions</a></p>
-<h2 id="spot-the-error">Spot the error</h2>
-<ol type="1">
-<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
-</ol>
-<pre><code>def fuel_needed(distance, mpg):
-   return distance / mpg
-
-def total_fuel_cost(distance, mpg, price_per_gallon):
-   fuel_needed(distance, mpg) * price_per_gallon
-
-# Example usage:
-print(total_fuel_cost(distance=300, mpg=25, price_per_gallon=4))</code></pre>
-<ol start="2" type="1">
-<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
-</ol>
-<pre><code>def fuel_needed(distance, mpg):
-   return distance / mpg
-
-def total_fuel_cost(distance, mpg, price_per_gallon):
-   print(fuel_needed(distance, mpg) * price_per_gallon)
-
-# Example usage:
-total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)</code></pre>
-<ol start="3" type="1">
-<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
-</ol>
-<pre><code>def fuel_needed(distance, mpg):
-   return distance / mpg
-
-def total_fuel_cost(distance, mpg, price_per_gallon):
-   print(fuel_needed(distance, mpg) * price_per_gallon)
-
-# Example usage:
-total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)</code></pre>
 <h2 id="calling-functions">Calling functions</h2>
 <ol type="1">
 <li>For the following code snippet, write a line of code that will result in the following output:</li>
@@ -151,10 +121,125 @@ def main(food: str) -&gt; None:
 </ol>
 <pre><code>def have_done(task, completed) -&gt; str:
     return &quot;Completed &quot; + task + &quot;: &quot; + str(completed)</code></pre>
-<h2 id="function-writing">Function writing</h2>
+<p><a href="#calling-functions-solutions">Solutions</a></p>
+<h2 id="spot-the-error">Spot the error</h2>
 <ol type="1">
-<li>Define a function <code>greet</code>. It will take a single parameter, <code>name</code>, which is a string. The function will print a greeting message that includes the name of the person you would like to greet, along with additional details about the name. Specifically, it will print a message that states what the first and last letters of the name are. It should then <code>return</code> a string expressing happiness to see the person. Refer to the example usage to help construct your function body. Define a <code>main</code> function. This will be the entrypoint to your program. Inside the <code>main</code> function, call the <code>greet</code> function with the argument as specified by the example usage. The <code>main</code> function should print the value <code>return</code>ed by the <code>greet</code> function. Finally, call your <code>main</code> function.</li>
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
 </ol>
+<pre><code>def fuel_needed(distance, mpg):
+   return distance / mpg
+
+def total_fuel_cost(distance, mpg, price_per_gallon):
+   fuel_needed(distance, mpg) * price_per_gallon
+
+# Example usage:
+print(total_fuel_cost(distance=300, mpg=25, price_per_gallon=4))</code></pre>
+<ol start="2" type="1">
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
+</ol>
+<pre><code>def fuel_needed(distance, mpg):
+   return distance / mpg
+
+def total_fuel_cost(distance, mpg, price_per_gallon):
+   print(fuel_needed(distance, mpg) * price_per_gallon)
+
+# Example usage:
+total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)</code></pre>
+<ol start="3" type="1">
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
+</ol>
+<pre><code>def fuel_needed(distance, mpg):
+   return distance / mpg
+
+def total_fuel_cost(distance, mpg, price_per_gallon):
+   print(fuel_needed(distance, mpg) * price_per_gallon)
+
+# Example usage:
+total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)</code></pre>
+<ol start="4" type="1">
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
+</ol>
+<pre><code>def greet(name: str) -&gt; str:
+    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + name[0] + &quot; and ends with an &quot; + name[len(name) - 1])
+    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
+
+def main() -&gt; None:
+    print(greet(name=&quot;Molly&quot;))
+
+# Example usage: 
+main()</code></pre>
+<ol start="5" type="1">
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
+</ol>
+<pre><code>def greet(name: str) -&gt; str:
+    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
+    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
+
+
+def main() -&gt; None:
+    print(greet(name=&quot;Molly&quot;))
+
+# Example usage: 
+main()</code></pre>
+<ol start="6" type="1">
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
+</ol>
+<pre><code>    greet(name: str) -&gt; str:
+    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
+    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
+
+
+def main() -&gt; None:
+    print(greet(name=&quot;Molly&quot;))
+
+# Example usage: 
+main()</code></pre>
+<ol start="7" type="1">
+<li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
+</ol>
+<pre><code>def greet(name: str) -&gt; str:
+    print(&quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;)
+    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
+
+
+def main() -&gt; None:
+    print(greet(name=&quot;Molly&quot;))
+
+# Example usage: 
+main()</code></pre>
+<p><a href="#spot-the-error-solutions">Solutions</a></p>
+<h1 id="solutions">Solutions</h1>
+<h2 id="conceptual-1">Conceptual</h2>
+<ol type="1">
+<li><p>A function definition is where you create the function and specify what it does. It includes the function signature and everything indented below it. The signature consists of the function name, parameters, the types of the parameters, and the return type. The function body contains the code block that executes when the function is called. A function call occurs when you invoke or execute the function by writing the function name followed by parentheses. If the function accepts inputs, the parentheses will contain the values assigned to the parameters, also known as arguments. When a function definition is encountered, the function body is not executed; it is bypassed until the function is called. To call a function, you must first define it.</p></li>
+<li><p>Parameters are the variables listed in the function signature that define the expected inputs. Your parameters will hold the values passed into the function when the function is called. These values that are assigned to the parameters are called arguments. Arguments are the actual values passed to the function when it is called.</p></li>
+<li><p>A function signature refers to the first line of a function definition, where the <code>def</code> keyword is used. Following the <code>def</code> keyword is the function name, and after the function name is a set of parentheses that enclose the parameter list. After the parameter list comes the return type. The function signature is important because it defines how the function can be called and what kinds of inputs and outputs are expected. Without a signature, you wouldn’t know what parameters to provide or even how to call the function, since the function name would be missing.</p></li>
+<li><p>No, the <code>return</code> statement cannot be replaced with a <code>print</code> statement. The return statement ends the function execution and passes a value back to the caller. The <code>print</code> statement merely outputs a value to the console without returning anything to the function caller.</p></li>
+<li><p>No, a function does not need to have a return statement. If no return is present, the function will return None by default after completing its execution. However, using return is necessary when you need to send a value back to the caller.</p></li>
+<li><p>The arrow (<code>-&gt;</code>) in a function signature will be followed by <code>None</code>. This indicates that the function does not return any meaningful value (ex. <code>int</code>, <code>float</code>, <code>bool</code>, etc.) and will return <code>None</code>.</p></li>
+<li></li>
+</ol>
+<pre><code>def function_name(param_1: type_of_value, param_2: type_of_value, param_n: type_of_value) -&gt; type_of_value:
+</code></pre>
+<ol start="8" type="1">
+<li></li>
+</ol>
+<pre><code>function_name(param_1=arg_1, param_2=arg_2, param_n=arg_n)</code></pre>
+<ol start="9" type="1">
+<li><p>After the function is executed, you will return back to the point in the code where the function was called.</p></li>
+<li><p>No, the return value is not automatically outputted. To see the return value, you need to use a print statement to output it. Your argument within the print function is going to be the call to your function that you would like to receive the return value from.</p></li>
+<li><p>If there is no <code>return</code> statement in a function, it returns <code>None</code> by default.</p></li>
+<li><p>The return keyword ends the function execution and specifies the value to be returned to the caller. If omitted, the function will return <code>None</code> after execution.</p></li>
+<li><p>If you call a function before it is defined, you will get an error. Python reads from top to bottom and so if the function is not defined and memorized in memory, when python encounters the function at a function call, it will not know what the function_name is referring to. The function must be defined before it can be called as Python needs to know that the function is defined before executing trying to call it.</p></li>
+<li><p>To pass a function’s return value as an argument to another function, you need to call the first function, which will execute it and produce a return value. That return value can then be passed as an argument to the second function.</p></li>
+</ol>
+<p>This works because when you call the first function, it returns a value, and that value is then used as input (an argument) for the second function.</p>
+<p>Example:</p>
+<pre><code>def double(x: int) -&gt; int:
+    return x * 2
+
+def add_five(y: int) -&gt; int:
+    return y + 5</code></pre>
 <pre><code>def greet(name: str) -&gt; str:
     print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + name[0] + &quot; and ends with an &quot; + name[len(name) - 1])
     return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
@@ -203,6 +288,8 @@ def main() -&gt; None:
 
 # Example usage: 
 main()</code></pre>
+<h1 id="pass-the-return-value-of-double-as-an-argument-to-add_five">Pass the return value of double() as an argument to add_five()</h1>
+<p>print(add_five(y=double(x=4))) # double(4) returns 8, which is passed to add_five() ```</p>
 </div>
 
        
@@ -210,7 +297,7 @@ main()</code></pre>
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s):        Alyssa Lytle,        Megan Zhang, David Karash</span>
+      <span> Contributor(s):        Alyssa Lytle,        Viktorya Hunanyan,        Megan Zhang, David Karash</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
