@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1725293926.502143">
+  <link rel="stylesheet" href="/static/styles.css?v=1725294020.1923285">
 </head>
 
 <body>
@@ -70,8 +70,9 @@
 <li><a href="#solutions">Solutions</a>
 <ul>
 <li><a href="#conceptual-1">Conceptual</a></li>
+<li><a href="#calling-functions-1">Calling functions</a></li>
+<li><a href="#spot-the-error-1">Spot the error</a></li>
 </ul></li>
-<li><a href="#pass-the-return-value-of-double-as-an-argument-to-add_five">Pass the return value of double() as an argument to add_five()</a></li>
 </ul>
 </</ul>
                     </div>
@@ -101,112 +102,97 @@
 <ol type="1">
 <li>For the following code snippet, write a line of code that will result in the following output:</li>
 </ol>
-<pre><code>def flavor(taste: str, percent: float) -&gt; None:
-    print(&quot;This flavor is &quot; + str(percent) + &quot;% &quot; + taste)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">def</span> flavor(taste: <span class="bu">str</span>, percent: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;This flavor is &quot;</span> <span class="op">+</span> <span class="bu">str</span>(percent) <span class="op">+</span> <span class="st">&quot;% &quot;</span> <span class="op">+</span> taste)</span></code></pre></div>
 <p>Output:</p>
 <pre class="plaintext"><code>    $ python -m flavor
     This flavor is 100% umami</code></pre>
 <ol start="2" type="1">
 <li>For the following code snippet, write a line of code that will call the <code>main</code> function. Next, write a line of code to be inserted within the body of the <code>main</code> function. This line should call the <code>eat</code> function with the argument passed when the main function was called.</li>
 </ol>
-<pre><code>def eat(food: str) -&gt; None:
-    print(&quot;Eating &quot; + food)
-
-def main(food: str) -&gt; None:
-    food_item = &quot;apple&quot;
-    eat(food=food)
-</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">def</span> eat(food: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Eating &quot;</span> <span class="op">+</span> food)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a><span class="kw">def</span> main(food: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    food_item <span class="op">=</span> <span class="st">&quot;apple&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    eat(food<span class="op">=</span>food)</span></code></pre></div>
 <ol start="3" type="1">
 <li>For the following code snippet, write a line of code that will call the <code>have_done</code> function with the arguments <code>"homework"</code> and <code>False</code>. If you wanted to print the string created by the <code>have_done</code> function, how would you modify your function call?</li>
 </ol>
-<pre><code>def have_done(task, completed) -&gt; str:
-    return &quot;Completed &quot; + task + &quot;: &quot; + str(completed)</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">def</span> have_done(task, completed) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="cf">return</span> <span class="st">&quot;Completed &quot;</span> <span class="op">+</span> task <span class="op">+</span> <span class="st">&quot;: &quot;</span> <span class="op">+</span> <span class="bu">str</span>(completed)</span></code></pre></div>
 <p><a href="#calling-functions-solutions">Solutions</a></p>
 <h2 id="spot-the-error">Spot the error</h2>
 <ol type="1">
 <li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
 </ol>
-<pre><code>def fuel_needed(distance, mpg):
-   return distance / mpg
-
-def total_fuel_cost(distance, mpg, price_per_gallon):
-   fuel_needed(distance, mpg) * price_per_gallon
-
-# Example usage:
-print(total_fuel_cost(distance=300, mpg=25, price_per_gallon=4))</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">def</span> fuel_needed(distance: <span class="bu">float</span>, mpg: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="cf">return</span> distance <span class="op">/</span> mpg</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="kw">def</span> total_fuel_cost(distance: <span class="bu">float</span>, mpg: <span class="bu">float</span>, price_per_gallon: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    fuel_needed(distance<span class="op">=</span>distance, mpg<span class="op">=</span>mpg) <span class="op">*</span> price_per_gallon</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="co"># Example usage:</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="bu">print</span>(total_fuel_cost(distance<span class="op">=</span><span class="dv">300</span>, mpg<span class="op">=</span><span class="dv">25</span>, price_per_gallon<span class="op">=</span><span class="dv">4</span>))</span></code></pre></div>
 <ol start="2" type="1">
 <li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
 </ol>
-<pre><code>def fuel_needed(distance, mpg):
-   return distance / mpg
-
-def total_fuel_cost(distance, mpg, price_per_gallon):
-   print(fuel_needed(distance, mpg) * price_per_gallon)
-
-# Example usage:
-total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">def</span> fuel_needed(distance: <span class="bu">float</span>, mpg: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    <span class="cf">return</span> distance <span class="op">/</span> mpg</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="kw">def</span> total_fuel_cost(distance: <span class="bu">float</span>, mpg: <span class="bu">float</span>, price_per_gallon: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    <span class="bu">print</span>(fuel_needed(distance<span class="op">=</span>distance, mpg<span class="op">=</span>mpg) <span class="op">*</span> price_per_gallon)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="co"># Example usage:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>total_fuel_cost(distance<span class="op">=</span><span class="dv">300</span>, mpg<span class="op">=</span><span class="dv">25</span>, price_per_gallon<span class="op">=</span><span class="dv">4</span>)</span></code></pre></div>
 <ol start="3" type="1">
 <li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
 </ol>
-<pre><code>def fuel_needed(distance, mpg):
-   return distance / mpg
-
-def total_fuel_cost(distance, mpg, price_per_gallon):
-   print(fuel_needed(distance, mpg) * price_per_gallon)
-
-# Example usage:
-total_fuel_cost(distance=300, mpg=25, price_per_gallon=4)</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">def</span> greet(name: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;, your name starts with an &quot;</span> <span class="op">+</span> name[<span class="dv">0</span>] <span class="op">+</span> <span class="st">&quot; and ends with an &quot;</span> <span class="op">+</span> name[<span class="bu">len</span>(name) <span class="op">-</span> <span class="dv">1</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="cf">return</span> <span class="st">&quot;I&#39;m so happy to see you &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;!&quot;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="bu">print</span>(greet(name<span class="op">=</span><span class="st">&quot;Molly&quot;</span>))</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a><span class="co"># Example usage: </span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>main()</span></code></pre></div>
 <ol start="4" type="1">
 <li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
 </ol>
-<pre><code>def greet(name: str) -&gt; str:
-    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + name[0] + &quot; and ends with an &quot; + name[len(name) - 1])
-    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
-
-def main() -&gt; None:
-    print(greet(name=&quot;Molly&quot;))
-
-# Example usage: 
-main()</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">def</span> greet(name: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    <span class="cf">return</span> <span class="st">&quot;I&#39;m so happy to see you &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;!&quot;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;, your name starts with an &quot;</span> <span class="op">+</span> <span class="bu">str</span>(name[<span class="dv">0</span>]) <span class="op">+</span> <span class="st">&quot; and ends with an &quot;</span> <span class="op">+</span> <span class="bu">str</span>(name[<span class="bu">len</span>(name) <span class="op">-</span> <span class="dv">1</span>]))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>    <span class="bu">print</span>(greet(name<span class="op">=</span><span class="st">&quot;Molly&quot;</span>))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a><span class="co"># Example usage: </span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>main()</span></code></pre></div>
 <ol start="5" type="1">
 <li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
 </ol>
-<pre><code>def greet(name: str) -&gt; str:
-    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
-    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
-
-
-def main() -&gt; None:
-    print(greet(name=&quot;Molly&quot;))
-
-# Example usage: 
-main()</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">def</span> greet(name: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    <span class="cf">return</span> <span class="st">&quot;I&#39;m so happy to see you &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;!&quot;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;, your name starts with an &quot;</span> <span class="op">+</span> <span class="bu">str</span>(name[<span class="dv">0</span>]) <span class="op">+</span> <span class="st">&quot; and ends with an &quot;</span> <span class="op">+</span> <span class="bu">str</span>(name[<span class="bu">len</span>(name) <span class="op">-</span> <span class="dv">1</span>]))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>    <span class="bu">print</span>(greet(name<span class="op">=</span><span class="st">&quot;Molly&quot;</span>))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a><span class="co"># Example usage: </span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a>main()</span></code></pre></div>
 <ol start="6" type="1">
 <li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
 </ol>
-<pre><code>    greet(name: str) -&gt; str:
-    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
-    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
-
-
-def main() -&gt; None:
-    print(greet(name=&quot;Molly&quot;))
-
-# Example usage: 
-main()</code></pre>
-<ol start="7" type="1">
-<li>Looking at the following code, is there something wrong with the code that stops the execution of the entire code? If yes, what is it and why is it a problem?</li>
-</ol>
-<pre><code>def greet(name: str) -&gt; str:
-    print(&quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;)
-    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
-
-
-def main() -&gt; None:
-    print(greet(name=&quot;Molly&quot;))
-
-# Example usage: 
-main()</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">def</span> greet(name: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;I&#39;m so happy to see you &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;!&quot;</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;, your name starts with an &quot;</span> <span class="op">+</span> <span class="bu">str</span>(name[<span class="dv">0</span>]) <span class="op">+</span> <span class="st">&quot; and ends with an &quot;</span> <span class="op">+</span> <span class="bu">str</span>(name[<span class="bu">len</span>(name) <span class="op">-</span> <span class="dv">1</span>]))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a>    <span class="bu">print</span>(greet(name<span class="op">=</span><span class="st">&quot;Molly&quot;</span>))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true"></a><span class="co"># Example usage: </span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true"></a>main()</span></code></pre></div>
 <p><a href="#spot-the-error-solutions">Solutions</a></p>
 <h1 id="solutions">Solutions</h1>
 <h2 id="conceptual-1">Conceptual</h2>
@@ -219,12 +205,11 @@ main()</code></pre>
 <li><p>The arrow (<code>-&gt;</code>) in a function signature will be followed by <code>None</code>. This indicates that the function does not return any meaningful value (ex. <code>int</code>, <code>float</code>, <code>bool</code>, etc.) and will return <code>None</code>.</p></li>
 <li></li>
 </ol>
-<pre><code>def function_name(param_1: type_of_value, param_2: type_of_value, param_n: type_of_value) -&gt; type_of_value:
-</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="kw">def</span> function_name(param_1: type_of_value, param_2: type_of_value, param_n: type_of_value) <span class="op">-&gt;</span> type_of_value:</span></code></pre></div>
 <ol start="8" type="1">
 <li></li>
 </ol>
-<pre><code>function_name(param_1=arg_1, param_2=arg_2, param_n=arg_n)</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a>function_name(param_1<span class="op">=</span>arg_1, param_2<span class="op">=</span>arg_2, param_n<span class="op">=</span>arg_n)</span></code></pre></div>
 <ol start="9" type="1">
 <li><p>After the function is executed, you will return back to the point in the code where the function was called.</p></li>
 <li><p>No, the return value is not automatically outputted. To see the return value, you need to use a print statement to output it. Your argument within the print function is going to be the call to your function that you would like to receive the return value from.</p></li>
@@ -235,61 +220,52 @@ main()</code></pre>
 </ol>
 <p>This works because when you call the first function, it returns a value, and that value is then used as input (an argument) for the second function.</p>
 <p>Example:</p>
-<pre><code>def double(x: int) -&gt; int:
-    return x * 2
-
-def add_five(y: int) -&gt; int:
-    return y + 5</code></pre>
-<pre><code>def greet(name: str) -&gt; str:
-    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + name[0] + &quot; and ends with an &quot; + name[len(name) - 1])
-    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
-
-def main() -&gt; None:
-    print(greet(name=&quot;Molly&quot;))
-
-# Example usage: 
-main()</code></pre>
-<ol start="5" type="1">
-<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="kw">def</span> double(x: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>    <span class="cf">return</span> x <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a><span class="kw">def</span> add_five(y: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a>    <span class="cf">return</span> y <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a><span class="bu">print</span>(add_five(y<span class="op">=</span>double(x<span class="op">=</span><span class="dv">3</span>)))</span></code></pre></div>
+<h2 id="calling-functions-1">Calling functions</h2>
+<ol type="1">
+<li><p><strong>For the <code>flavor</code> function:</strong></p>
+<p>To call the <code>flavor</code> function using keyword arguments:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a>flavor(taste<span class="op">=</span><span class="st">&quot;umami&quot;</span>, percent<span class="op">=</span><span class="fl">100.0</span>)</span></code></pre></div></li>
+<li><p><strong>For calling the <code>main</code> function and modifying its body with keyword arguments:</strong></p>
+<p>To call the <code>main</code> function with a keyword argument:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a>main(food<span class="op">=</span><span class="st">&quot;apple&quot;</span>)</span></code></pre></div>
+<p>In the <code>main</code> function, to call the <code>eat</code> function with keyword arguments:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a><span class="kw">def</span> main(food: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true"></a>    food_item <span class="op">=</span> <span class="st">&quot;apple&quot;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true"></a>    eat(food<span class="op">=</span>food)</span></code></pre></div></li>
+<li><p><strong>For calling <code>have_done</code> and printing the result with keyword arguments:</strong></p>
+<p>To call <code>have_done</code> with keyword arguments:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a>have_done(task<span class="op">=</span><span class="st">&quot;homework&quot;</span>, completed<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<p>To print the result of this function call:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true"></a><span class="bu">print</span>(have_done(task<span class="op">=</span><span class="st">&quot;homework&quot;</span>, completed<span class="op">=</span><span class="va">False</span>))</span></code></pre></div></li>
 </ol>
-<pre><code>def greet(name: str) -&gt; str:
-    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
-    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
-
-
-def main() -&gt; None:
-    print(greet(name=&quot;Molly&quot;))
-
-# Example usage: 
-main()</code></pre>
-<ol start="6" type="1">
-<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
+<h2 id="spot-the-error-1">Spot the error</h2>
+<ol type="1">
+<li><p><strong>Code Snippet 1:</strong></p>
+<p><strong>Problem:</strong> The <code>total_fuel_cost</code> function does not return a value. It performs a calculation but does not include a <code>return</code> statement. As a result, it returns <code>None</code> by default, which leads to <code>print(total_fuel_cost(...))</code> printing <code>None</code> which is not the intended use of line 8.</p>
+<p><strong>Solution:</strong> Add a <code>return</code> statement in the <code>total_fuel_cost</code> function:</p></li>
+<li><p><strong>Code Snippet 2:</strong></p>
+<p><strong>Problem:</strong> There is no issue with this code that stops execution. The <code>total_fuel_cost</code> function correctly prints the result.</p>
+<p><strong>Solution:</strong> None needed; the code works as intended.</p></li>
+<li><p><strong>Code Snippet 4:</strong></p>
+<p><strong>Problem:</strong> There is no issue with this code that stops execution. The <code>greet</code> function prints a message and then returns a string. The <code>main</code> function calls <code>greet</code> and prints its return value.</p>
+<p><strong>Solution:</strong> None needed; the code works as intended.</p></li>
+<li><p><strong>Code Snippet 5:</strong></p>
+<p><strong>Problem:</strong> The <code>print</code> statement after the <code>return</code> statement in the <code>greet</code> function is unreachable code. Once the <code>return</code> statement is executed, the function exits, and any code following it will not be executed.</p>
+<p><strong>Solution:</strong> Move the <code>print</code> statement before the <code>return</code> statement:</p></li>
+<li><p><strong>Code Snippet 6:</strong></p>
+<p><strong>Problem:</strong> There is a syntax error due to incorrect indentation. The <code>greet</code> function definition is not properly aligned.</p>
+<p><strong>Solution:</strong> Correct the indentation of the <code>greet</code> function definition:</p></li>
+<li><p><strong>Code Snippet 7:</strong></p>
+<p><strong>Problem:</strong> There is no issue with this code that stops execution. The <code>greet</code> function prints two messages, and then <code>main</code> calls <code>greet</code> and prints its return value (which is <code>None</code>).</p>
+<p><strong>Solution:</strong> None needed; the code works as intended.</p></li>
 </ol>
-<pre><code>    greet(name: str) -&gt; str:
-    return &quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;
-    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
-
-
-def main() -&gt; None:
-    print(greet(name=&quot;Molly&quot;))
-
-# Example usage: 
-main()</code></pre>
-<ol start="7" type="1">
-<li>Looking at the following code, is there something wrong with the code that stops the execution of the example usage? If yes, what is it and why is it a problem?</li>
-</ol>
-<pre><code>def greet(name: str) -&gt; str:
-    prtin(&quot;I&#39;m so happy to see you &quot; + name + &quot;!&quot;)
-    print(&quot;Hello &quot; + name + &quot;, your name starts with an &quot; + str(name[0]) + &quot; and ends with an &quot; + str(name[len(name) - 1]))
-
-
-def main() -&gt; None:
-    print(greet(name=&quot;Molly&quot;))
-
-# Example usage: 
-main()</code></pre>
-<h1 id="pass-the-return-value-of-double-as-an-argument-to-add_five">Pass the return value of double() as an argument to add_five()</h1>
-<p>print(add_five(y=double(x=4))) # double(4) returns 8, which is passed to add_five() ```</p>
 </div>
 
        
