@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1726233913.3559282">
+  <link rel="stylesheet" href="/static/styles.css?v=1726238211.013243">
 </head>
 
 <body>
@@ -274,9 +274,9 @@
 <p>Now you have a function that, given a guess and a secret of the same length, will Wordle emojify the results of the guess! Notice how your <code>emojified</code> function makes use of the simpler <code>contains_char</code> function to build up more complex behavior. This is the beauty of abstraction!</p>
 <p>Once your <code>emojified</code> function is working correctly, as shown above, continue on.</p>
 <h2 id="part-4.-main">Part 4. <code>main</code></h2>
-<p>Now it’s time to bring together your functions into a <code>main</code> function that handles the high-level logic of the Wordle game loop. The <code>main</code> function will set the secret word as a variable (use <code>"codes"</code> for autograding), track the number of turns the user has taken, determine if the user has won the game, and manage the flow of the game.</p>
+<p>Now it’s time to bring together your functions into a <code>main</code> function that handles the high-level logic of the Wordle game loop. The <code>main</code> function will take as input the secret word, track the number of turns the user has taken, determine if the user has won the game, and manage the flow of the game.</p>
 <p>The declaration of your <code>main</code> function is unlike the functions above because it will not have any parameters and it will return <code>None</code>. You can decare your main function as follows:</p>
-<pre><code>    def main() -&gt; None:
+<pre><code>    def main(secret: str) -&gt; None:
         &quot;&quot;&quot;The entrypoint of the program and main game loop.&quot;&quot;&quot;
         # Your code will go here</code></pre>
 <p>The “state” of a game refers to the variables you need to keep track of in memory in order to run the game. What variables do you need to keep track of? Define those inside of <code>main</code>’s body first.</p>
@@ -296,7 +296,7 @@
     Python 3.10.2 (v3.10.2:a58ebcc701, Jan 13 2022, 14:50:16) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
     >>> from exercises.ex03_wordle import main
-    >>> main()
+    >>> main(secret="codes")
     === Turn 1/6 ===
     Enter a 5 character word: ideas
     ⬜🟨🟨⬜🟩
@@ -305,7 +305,7 @@
     🟩🟩🟩🟩🟩
     You won in 2/6 turns!
 
-    >>> main()
+    >>> main(secret="codes")
     === Turn 1/6 ===
     Enter a 5 character word: wohoo
     ⬜🟩⬜🟨🟨
@@ -331,7 +331,7 @@
 </pre>
 <p>Once you have your <code>main</code> function and game loop working, there’s only one last part. Just like with EX02, add the following snippet of code as the last 2 lines of your program (notice, there are two underscores <em>on both sides</em> of the words <code>name</code> and <code>main</code>):</p>
 <pre><code>    if __name__ == &quot;__main__&quot;:
-        main()</code></pre>
+        main(secret=&quot;codes&quot;)</code></pre>
 <p>As mentioned before, we will fully explain what is going on in the following code snippet soon, but for now note that this is an idiom common to Python programs like the one you have written. We will learn it does two things: 1. it makes it possible to run your Python program as a module (if you tried <code>python -m exercises.ex03_wordle</code> right now you would see nothing happens), and 2. it makes it possible for other modules to <em>import</em> your functions and reuse them.</p>
 <p>Now you can try running your game as a module and it should work: <code>python -m exercises.ex03_wordle</code></p>
 <p>Congratulations on writing your first <em>structured</em> program in COMP110!</p>
