@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Practice Memory Diagram - COMP110 - 24F</title>
+  <title> Challenge Question - COMP110 - 24F</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1727102726.9986567">
+  <link rel="stylesheet" href="/static/styles.css?v=1727102736.3439474">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
   <div id="lessons-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>Practice Memory Diagram</h1>
+        <h1>Challenge Question</h1>
         <hr class="title" />
       </div>
     </div>
@@ -61,41 +61,69 @@
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
-<li><a href="#snippet">Snippet</a></li>
-<li><a href="#solution">Solution</a></li>
+<li><a href="#importing-scope-challenge-question">Importing + Scope Challenge Question</a>
+<ul>
+<li><a href="#part-0.-setup">Part 0. Setup</a>
+<ul>
+<li><a href="#create-folder">Create Folder</a></li>
+<li><a href="#create-files">Create Files</a></li>
+</ul></li>
+<li><a href="#part-1.-concatenation.py">Part 1. <code>concatenation.py</code></a>
+<ul>
+<li><a href="#part-1.1-concat-function">Part 1.1 <code>concat</code> Function</a></li>
+<li><a href="#part-1.2-calling-the-concat-function">Part 1.2 Calling the <code>concat</code> Function</a></li>
+</ul></li>
+<li><a href="#part-2.-visualize.py">Part 2. <code>visualize.py</code></a>
+<ul>
+<li><a href="#part-2.1-import-the-function">Part 2.1 Import the function</a></li>
+</ul></li>
+</ul></li>
 </ul>
 </</ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="snippet">Snippet</h1>
-<pre><code>    class Profile:
-        
-        handle: str
-        followers: int
-        is_private: bool
-        
-        def __init__(self, handle: str):
-            self.handle = handle
-            self.followers = 0
-            self.is_private = False
-            
-        def send(self, msg: str) -&gt;  None:
-            if not self.is_private:
-                print(f&quot;@{self.handle} says {msg}&quot;)
-                
-        def toggle_privacy(self) -&gt; None:
-            self.is_private = not self.is_private
-            
-    a: Profile = Profile(&quot;alyssa&quot;)
-    b: Profile = Profile(&quot;tyler&quot;)
-    a.send(&quot;Sup&quot;)
-    b.toggle_privacy()
-    b.send(&quot;Heyyy&quot;)</code></pre>
-<h1 id="solution">Solution</h1>
-<p><a href="https://youtu.be/MsxvXjYM8jo?si=SWlxs4pP0qNJljuU">Video</a></p>
-<p><img class="img-fluid" src="/static/practice-mem-diagrams/Profile.png" alt=""  /></p>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="importing-scope-challenge-question">Importing + Scope Challenge Question</h1>
+<p>For this assignment, we’re going to practice <em>importing</em> functions from different files!</p>
+<h2 id="part-0.-setup">Part 0. Setup</h2>
+<h3 id="create-folder">Create Folder</h3>
+<p>In your <strong>CQs</strong> folder, you’re going to want to create <em>another folder</em>! Right click on <strong>CQs</strong> and select “New Folder…”. Name this folder <code>cq04</code>.</p>
+<h3 id="create-files">Create Files</h3>
+<p>Inside your <strong>cq04</strong> folder, create the following three files (right click and select “New File…” for each one):</p>
+<ul>
+<li><code>coordinates.py</code></li>
+<li><code>concatenation.py</code></li>
+<li><code>visualize.py</code></li>
+</ul>
+<h2 id="part-1.-concatenation.py">Part 1. <code>concatenation.py</code></h2>
+<h3 id="part-1.1-concat-function">Part 1.1 <code>concat</code> Function</h3>
+<p>In <code>concatenation.py</code>, write a function that matches the following description:</p>
+<ul>
+<li>Name: <code>concat</code></li>
+<li>Parameters: two <code>str</code>s</li>
+<li>Return type: <code>str</code></li>
+<li>Behavior: It should return the <em>concatenation</em> of the two input strings.</li>
+</ul>
+<h4 id="example-behavior-in-repl">Example behavior in REPL</h4>
+<pre>
+<div class="terminal">
+/workspace (main*) > python
+>>> from CQs.cq04.concatenation import concat
+>>> concat("hello","world")
+'helloworld'
+>>> concat("123","4567")
+'1234567'
+</div>
+</pre>
+<h3 id="part-1.2-calling-the-concat-function">Part 1.2 Calling the <code>concat</code> Function</h3>
+<p>Now, still working in the file <code>concatenation.py</code>, print the result of calling <code>concat</code> with the arguments <code>"happy"</code> and <code>"tuesday"</code>.</p>
+<h2 id="part-2.-visualize.py">Part 2. <code>visualize.py</code></h2>
+<h3 id="part-2.1-import-the-function">Part 2.1 Import the function</h3>
+<p>In <code>visualize.py</code> <em>import</em> the function <code>concat</code> from <code>concatentation.py</code>. <em>Do not call the function yet!</em></p>
+<!-- ## Part 2. `get_coords` Function
+
+In `coordinates.py`,  write a function that matches the following description: -->
 </div>
 
        
