@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> EX09 - Data Utility Methods - COMP110 - 24F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1727922589.1085558">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="exercises-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>EX09 - Data Utility Methods</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#part-0.-pull-the-skeleton-code">Part 0. Pull the skeleton code</a>
+<ul>
+<li><a href="#understanding-the-exercise-files">Understanding the Exercise files</a></li>
+</ul></li>
+<li><a href="#part-1-data-utils">Part 1: Data Utils</a>
+<ul>
+<li><a href="#read_csv_rows">1.0 <code>read_csv_rows</code></a></li>
+<li><a href="#column_values">1.1 <code>column_values</code></a></li>
+<li><a href="#columnar">1.2 <code>columnar</code></a></li>
+<li><a href="#test-your-function-2">Test your function</a></li>
+</ul></li>
+<li><a href="#part-2-dataframes-class">Part 2: <code>DataFrames</code> Class</a>
+<ul>
+<li><a href="#init__">2.0 <code>__init__</code></a></li>
+<li><a href="#add__">2.1 <code>__add__</code></a></li>
+<li><a href="#head">2.2 <code>head</code></a></li>
+<li><a href="#select">2.3 <code>select</code></a></li>
+<li><a href="#filter_by_col_value">2.4 <code>filter_by_col_value</code></a></li>
+<li><a href="#filter_by_rank">2.5 <code>filter_by_rank</code></a></li>
+</ul></li>
+<li><a href="#part-3.-push-to-backup">Part 3. Push to Backup</a></li>
+<li><a href="#part-4.-submission">Part 4. Submission</a></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><p>For this exercise, you are going to get more practice writing classes while writing functions and methods to analyze some data!</p>
+<h2 id="part-0.-pull-the-skeleton-code">Part 0. Pull the skeleton code</h2>
+<p>You will find the starter files needed by “pulling” from the course workspace repository. Before beginning, be sure to:</p>
+<ol start="0" type="1">
+<li>Be sure you are in your course workspace. Open the file explorer and you should see your work for the course. If you do not, open your course workspace through File &gt; Open Recent.</li>
+<li>Open the <em>Source Control View</em> by clicking the 3-node (circles) graph (connected by lines) icon in your sidebar or opening the command palatte and searching for <em>Source Control</em>.</li>
+<li>Click the Ellipses in the Source Control pane and select “Pull” from the drop-down menu. This will begin the pulling process from the course repository. It should silently succeed.</li>
+<li>Return to the File Explorer pane and open the <code>exercises</code> directory. You should see it now contains another directory named <code>ex08</code>. If you expand that directory, you should see the starter files for the code you’ll be writing.</li>
+<li>If you do not see the <code>ex08</code> directory, try once more but selecting <code>"Pull From"</code> and select <code>origin</code> in step 2.</li>
+</ol>
+<h3 id="understanding-the-exercise-files">Understanding the Exercise files</h3>
+<p>In your <code>ex08</code> directory, you should now have the following three files:</p>
+<ul>
+<li><code>analyze_data.py</code>: this is where you are going to import and test your functions from <code>data_utils</code> and methods from <code>DataFrame</code></li>
+<li><code>data_utils.py</code>: this is where you will define some functions to read csv files and manipulate the imported data</li>
+<li><code>DataFrame.py</code>: this is where you will create your DataFrame class and define methods to manipulate and analyze the DataFrame objects.</li>
+</ul>
+<p>You’ll notice these files already have some skeleton code in them. They provide an outline of what your code will look like, but it’s your job to give them functionality!</p>
+<p>Additionally, you should see a <code>data</code> folder appear in your workspace with some .csv files! This is the data we are going to use in <code>analyze_data.py</code> to test your functions and methods! There are two datasets of popular baby names in New York from different year ranges.</p>
+<h2 id="part-1-data-utils">Part 1: Data Utils</h2>
+<p>For this part, you’re going to be working in <code>data_utils.py</code> to write some functions that will help you pull the data from the .csv files and prepare them to be made into <code>DataFrame</code>s!</p>
+<h3 id="read_csv_rows">1.0 <code>read_csv_rows</code></h3>
+<p>Complete the implementation of the <code>read_csv_rows</code> function in <code>data_utils.py</code>.</p>
+<p>Purpose: Read an entire CSV of data into a <code>list</code> of rows, each row represented as <code>dict[str, str]</code>.</p>
+<ul>
+<li>Function Name: <code>read_csv_rows</code></li>
+<li>Parameter:
+<ol type="1">
+<li><code>str</code> path to CSV file</li>
+</ol></li>
+<li>Return Type: <code>list[dict[str, str]]</code></li>
+</ul>
+<p>Implementation hint: refer back to the code you wrote in lecture for reading a CSV file. We give you the code for this function.</p>
+<h4 id="test-your-function">Test your function</h4>
+<p>In <code>analyze_data.py</code>, you’ll see that there are two lines of code to import both data files:</p>
+<pre><code>early_data: list[dict[str, str]] = read_csv_rows(&quot;data/baby_names_2012_2017.csv&quot;)</code></pre>
+<pre><code>later_data: list[dict[str, str]] = read_csv_rows(&quot;data/baby_names_2018_2021.csv&quot;)</code></pre>
+<p>To check that your function works, you can check the <em>length</em> of both <code>early_data</code> and <code>later_data</code>.</p>
+<p><code>early_data</code> should have a length of 48041 and <code>later_data</code> should have a length of 21173. <em>(That’s a lot of data!)</em></p>
+<h3 id="column_values">1.1 <code>column_values</code></h3>
+<p>Define and implement this function in <code>data_utils.py</code>.</p>
+<p>Purpose: Produce a <code>list[str]</code> of all values in a single <code>column</code> whose name is the second parameter.</p>
+<ul>
+<li>Function Name: <code>column_values</code></li>
+<li>Parameters:
+<ol type="1">
+<li><code>list[dict[str, str]]</code> - a list of rows representing a <em>table</em></li>
+<li><code>str</code> - the name of the column (key) whose values are being selected</li>
+</ol></li>
+<li>Return Type: <code>list[str]</code></li>
+</ul>
+<p>Implementation strategy: Establish an empty list to store your column values. Loop through every row in the first parameter. Append the value associated with the key (“column”) given as the second parameter to your list of column values. After looping through every row, return the list of column values.</p>
+<h4 id="test-your-function-1">Test your function</h4>
+<p>In <code>analyze_data.py</code>, you’ll see there is a line of code to test this function:</p>
+<pre><code>names_early_data: list[str] = column_values(early_data, &quot;name&quot;)</code></pre>
+<p>The length of <code>names_early_data</code> should be 48041.</p>
+<h3 id="columnar">1.2 <code>columnar</code></h3>
+<p>Finally, you are going to reformat your data to get it ready to be made into a <code>DataFrame</code>!</p>
+<p>Define and implement this function in <code>data_utils.py</code>.</p>
+<p>Purpose: <em>Transform</em> a table represented as a list of rows (e.g. <code>list[dict[str, str]]</code>) into one represented as a dictionary of columns (e.g. <code>dict[str, list[str]]</code>).</p>
+<p>Why is this function useful? Many types of analysis are much easier to perform column-wise.</p>
+<ul>
+<li>Function Name: <code>columnar</code></li>
+<li>Parameter: <code>list[dict[str, str]]</code> - a “table” organized as a list of rows</li>
+<li>Return Type: <code>dict[str, list[str]]</code> - a “table” organized as a dictionary of columns</li>
+</ul>
+<p>Implementation strategy: Establish an empty dictionary to the your column-oriented table you are building up to ultimately return. Loop through each of the column names in the first row of the parameter. Get a list of each column’s values via your <code>column_values</code> function defined previously. Then, associate the column name with the list of its values in the dictionary you established. After looping through every column name, return the dictionary.</p>
+<h3 id="test-your-function-2">Test your function</h3>
+<p>In <code>analyze_data.py</code>, you’ll see there two lines of code to test this function:</p>
+<pre><code>columnar_early_data: dict[str, list[str]] = columnar(early_data)</code></pre>
+<pre><code>columnar_later_data: dict[str, list[str]] = columnar(later_data)</code></pre>
+<p>Both <code>columnar_early_data</code> and <code>columnar_later_data</code> should be dictionaries with the keys [‘year’, ‘gender’, ‘ethnicity’, ‘name’, ‘count’].</p>
+<h2 id="part-2-dataframes-class">Part 2: <code>DataFrames</code> Class</h2>
+<p>Now, you are going to add some functionality to the <code>DataFrames</code> class!</p>
+<h3 id="init__">2.0 <code>__init__</code></h3>
+<h3 id="add__">2.1 <code>__add__</code></h3>
+<h3 id="head">2.2 <code>head</code></h3>
+<h3 id="select">2.3 <code>select</code></h3>
+<h3 id="filter_by_col_value">2.4 <code>filter_by_col_value</code></h3>
+<h3 id="filter_by_rank">2.5 <code>filter_by_rank</code></h3>
+<h2 id="part-3.-push-to-backup">Part 3. Push to Backup</h2>
+<h2 id="part-4.-submission">Part 4. Submission</h2>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Alyssa Lytle, Kris Jordan</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
