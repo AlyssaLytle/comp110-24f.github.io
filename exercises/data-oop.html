@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728061986.3021717">
+  <link rel="stylesheet" href="/static/styles.css?v=1728062822.042069">
 </head>
 
 <body>
@@ -71,17 +71,16 @@
 <li><a href="#column_values">1.1 <code>column_values</code></a></li>
 <li><a href="#columnar">1.2 <code>columnar</code></a></li>
 </ul></li>
-<li><a href="#part-2-dataframes-class">Part 2: <code>DataFrames</code> Class</a>
+<li><a href="#part-2-dataframe-class">Part 2: <code>DataFrame</code> Class</a>
 <ul>
 <li><a href="#init__">2.0 <code>__init__</code></a></li>
 <li><a href="#add__">2.1 <code>__add__</code></a></li>
 <li><a href="#head">2.2 <code>head</code></a></li>
 <li><a href="#select">2.3 <code>select</code></a></li>
 <li><a href="#filter_by_col_value">2.4 <code>filter_by_col_value</code></a></li>
-<li><a href="#filter_by_rank">2.5 <code>filter_by_rank</code></a></li>
 </ul></li>
-<li><a href="#part-3.-push-to-backup">Part 3. Push to Backup</a></li>
-<li><a href="#part-4.-submission">Part 4. Submission</a></li>
+<li><a href="#make-a-backup-checkpoint-commit">Make a Backup Checkpoint “Commit”</a></li>
+<li><a href="#submit-to-gradescope-for-grading">Submit to Gradescope for Grading</a></li>
 </ul>
 </</ul>
                     </div>
@@ -166,8 +165,8 @@
 <pre><code>columnar_early_data: dict[str, list[str]] = columnar(early_data)</code></pre>
 <pre><code>columnar_later_data: dict[str, list[str]] = columnar(later_data)</code></pre>
 <p>Both <code>columnar_early_data</code> and <code>columnar_later_data</code> should be dictionaries with the keys [‘year’, ‘gender’, ‘ethnicity’, ‘name’, ‘count’].</p>
-<h2 id="part-2-dataframes-class">Part 2: <code>DataFrames</code> Class</h2>
-<p>Now, you are going to add some functionality to the <code>DataFrames</code> class!</p>
+<h2 id="part-2-dataframe-class">Part 2: <code>DataFrame</code> Class</h2>
+<p>Now, you are going to add some functionality to the <code>DataFrame</code> class!</p>
 <h3 id="init__">2.0 <code>__init__</code></h3>
 <p>Your <code>DataFrames</code> class is only going to have one attribute: <code>data: dict[str, list[str]]</code>. The idea is that once you reformat your data using <code>columnar</code>, you’ll be able to store it as the <code>data</code> attribute in a <code>DataFrame</code> object.</p>
 <p>Define your <code>DataFrame</code> class, declare your <code>data</code> attribute, and write an <code>__init__</code> method that takes a <code>input_data: dict[str, list[str]]</code> as a parameter and initializes your <code>data</code> attribute to equal <code>input_data</code>.</p>
@@ -275,7 +274,7 @@ s", "jiang", "hunanyan"]}
 <pre><code>first_ten.tabulate()</code></pre>
 <h3 id="select">2.3 <code>select</code></h3>
 <p>Now, say we want to reason about a subset of the <em>columns</em> in our table.</p>
-<p>Why: Many data tables will contain many columns that are not related to the analysis you are trying to perform. <em>Selecting</em> only the columns you care about makes it easier to focus your attention on the problem at hand.</p>
+<p>Many data tables will contain many columns that are not related to the analysis you are trying to perform. <em>Selecting</em> only the columns you care about makes it easier to focus your attention on the problem at hand.</p>
 <ul>
 <li>Function Name: <code>select</code></li>
 <li>Parameters:
@@ -323,11 +322,71 @@ s", "jiang", "hunanyan"]}
 <p>Visualize the result using</p>
 <pre><code>name_and_count.tabulate()</code></pre>
 <h3 id="filter_by_col_value">2.4 <code>filter_by_col_value</code></h3>
-<h3 id="filter_by_rank">2.5 <code>filter_by_rank</code></h3>
-<h2 id="part-3.-push-to-backup">Part 3. Push to Backup</h2>
-<p>Git push instructions</p>
-<h2 id="part-4.-submission">Part 4. Submission</h2>
-<p>Submission instructions</p>
+<p>Now, say you want to filter out the data in your table so that you only have entries with specific values in a given column.</p>
+<p>Now, say we want to reason about a subset of the <em>columns</em> in our table.</p>
+<p>Many data tables will contain many columns that are not related to the analysis you are trying to perform. <em>Selecting</em> only the columns you care about makes it easier to focus your attention on the problem at hand.</p>
+<ul>
+<li>Function Name: <code>select</code></li>
+<li>Parameters:
+<ol type="1">
+<li><code>self</code> - a <code>DataFrame</code></li>
+<li><code>str</code> - the names of the column that has the value to filter</li>
+<li><code>str</code> - the specific value that will be filtered out</li>
+</ol></li>
+<li>Return type: <code>DataFrame</code></li>
+</ul>
+<p>Implementation strategy:</p>
+<p><em>TODO</em></p>
+<h4 id="test-your-method-2">Test your method</h4>
+<p>You can test your method in the REPL with the following small example:</p>
+<pre><div class="terminal">/workspace (main*) » python
+>>> from exercises.ex08.DataFrame import DataFrame
+>>> data: dict[str, list[str]] = {"first_name": ["alyssa", "izzi", "sophie", "viktorya"], "last_name": ["lytle","hinks", "jiang", "hunanyan"], "title" : ["Professor", "Professor", "TA", "TA"]}
+>>> df: DataFrame = DataFrame(data)
+>>> df.tabulate()
++--------------+-------------+-----------+
+| first_name   | last_name   | title     |
++==============+=============+===========+
+| alyssa       | lytle       | Professor |
++--------------+-------------+-----------+
+| izzi         | hinks       | Professor |
++--------------+-------------+-----------+
+| sophie       | jiang       | TA        |
++--------------+-------------+-----------+
+| viktorya     | hunanyan    | TA        |
++--------------+-------------+-----------+
+>>> TA_df: DataFrame = df.filter_by_col_value("title", "TA")
+>>> TA_df.tabulate()
++--------------+-------------+---------+
+| first_name   | last_name   | title   |
++==============+=============+=========+
+| sophie       | jiang       | TA      |
++--------------+-------------+---------+
+| viktorya     | hunanyan    | TA      |
++--------------+-------------+---------+
+</div></pre>
+<p>In <code>analyze_data.py</code>, you’ll see <code>filter_by_col_value</code> method is used to get just the names data of babies born in 2020.</p>
+<pre><code>names_2020: DataFrame = df.filter_by_col_value(&quot;year&quot;, &quot;2020&quot;)</code></pre>
+<p>Visualize the result using</p>
+<pre><code>names_2020.tabulate()</code></pre>
+<h2 id="make-a-backup-checkpoint-commit">Make a Backup Checkpoint “Commit”</h2>
+<p>As you make progress on this exercise, making backups is encouraged.</p>
+<ol type="1">
+<li>Open the Source Control panel (Command Palette: “Show SCM” or click the icon with three circles and lines on the activity panel).</li>
+<li>Notice the files listed under Changes. These are files you’ve made modifications to since your last backup.</li>
+<li>Move your mouse’s cursor over the word <em>Changes</em> and notice the + symbol that appears. Click that plus symbol to add all changes to the next backup. You will now see the files listed under “Staged Changes”.
+<ul>
+<li>If you do not want to backup <em>all</em> changed files, you can select them individually. For this course you’re encouraged to back everything up.</li>
+</ul></li>
+<li>In the Message box, give a brief description of what you’ve changed and are backing up. This will help you find a specific backup (called a “commit”) if needed. In this case a message such as, “Progress on Exercise N” will suffice, where N is the current exercise.</li>
+<li>Press the Check icon to make a <em>Commit</em> (a version) of your work.</li>
+<li>Finally, press the Ellipses icon (…), look for “Pull/Push” submenu, and select “Push to…”, and in the dropdown select your backup repository.</li>
+</ol>
+<h2 id="submit-to-gradescope-for-grading">Submit to Gradescope for Grading</h2>
+<p>All that’s left now is to hand-in your work on Gradescope for grading!</p>
+<p>Type the following command (all on a single line):</p>
+<p><code>python -m tools.submission exercises/ex08</code></p>
+<p>In the file explorer pane, look to find the zip file named “yy.mm.dd-hh.mm-exercises-ex08.zip”. The “yy”, “mm”, “dd”, and so on, are timestamps with the current year, month, day, hour, minute. If you right click on this file and select “Reveal in File Explorer” on Windows or “Reveal in Finder” on Mac, the zip file’s location on your computer will open. Upload this file to Gradescope to submit your work for this exercise.</p>
 </div>
 
        
