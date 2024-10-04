@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728057806.5721867">
+  <link rel="stylesheet" href="/static/styles.css?v=1728061563.1713312">
 </head>
 
 <body>
@@ -234,6 +234,8 @@
 </ol></li>
 <li>Use the dictionary to create a new <code>DataFrame</code> and return it!</li>
 </ol>
+<h4 id="test-your-method">Test your method</h4>
+<p>You can test your method in the REPL with the following small example:</p>
 <pre><div class="terminal">/workspace (main*) » python
 >>> from exercises.ex08.DataFrame import DataFrame
 >>> data: dict[str, list[str]] = {"first_name": ["alyssa", "izzi", "sophie", "viktorya"], "last_name": ["lytle","hink
@@ -261,7 +263,59 @@ s", "jiang", "hunanyan"]}
 | izzi         | hinks       |
 +--------------+-------------+
 </div></pre>
+<p>In <code>analyze_data.py</code>, you’ll see the <code>head</code> method is used to get the first 10 entries of data.</p>
+<pre><code>first_ten: DataFrame = df.head(10)</code></pre>
+<p>Visualize the result using</p>
+<pre><code>first_ten.tabulate()</code></pre>
 <h3 id="select">2.3 <code>select</code></h3>
+<p>Now, say we want to reason about a subset of the <em>columns</em> in our table.</p>
+<p>Why: Many data tables will contain many columns that are not related to the analysis you are trying to perform. <em>Selecting</em> only the columns you care about makes it easier to focus your attention on the problem at hand.</p>
+<ul>
+<li>Function Name: <code>select</code></li>
+<li>Parameters:
+<ol type="1">
+<li><code>self</code> - a <code>DataFrame</code></li>
+<li><code>list[str]</code> - the names of the columns to copy to the new, returned <code>DataFrame</code></li>
+</ol></li>
+<li>Return type: <code>DataFrame</code></li>
+</ul>
+<p>Implementation strategy:</p>
+<ol type="1">
+<li>Establish an empty dictionary.</li>
+<li>Loop through each of the columns <em>in the second parameter of the function</em>
+<ol type="1">
+<li>Assign to the column key of the result dictionary the list of values stored in the input dictionary at the same column</li>
+</ol></li>
+<li>Use the dictionary to create a new <code>DataFrame</code> and return it!</li>
+</ol>
+<h4 id="test-your-method-1">Test your method</h4>
+<p>You can test your method in the REPL with the following small example:</p>
+<pre><div class="terminal">/workspace (main*) » python
+>>> from exercises.ex08.DataFrame import DataFrame
+>>> data: dict[str, list[str]] = {"first_name": ["alyssa", "izzi"], "last_name": ["lytle","hinks"], "title": ["Professor", "Professor"]}
+>>> df: DataFrame = DataFrame(data)
+>>> df.tabulate()
++--------------+-------------+-----------+
+| first_name   | last_name   | title     |
++==============+=============+===========+
+| alyssa       | lytle       | Professor |
++--------------+-------------+-----------+
+| izzi         | hinks       | Professor |
++--------------+-------------+-----------+
+>>> just_names: DataFrame = df.select(["first_name", "last_name"])
+>>> just_names.tabulate()
++--------------+-------------+
+| first_name   | last_name   |
++==============+=============+
+| alyssa       | lytle       |
++--------------+-------------+
+| izzi         | hinks       |
++--------------+-------------+
+</div></pre>
+<p>In <code>analyze_data.py</code>, you’ll see the <code>select</code> and <code>head</code> methods are used together to get just the <code>name</code> and <code>count</code> of the first 10 entries of data.</p>
+<pre><code>name_and_count: DataFrame = df.head(10).select([&quot;name&quot;, &quot;count&quot;])</code></pre>
+<p>Visualize the result using</p>
+<pre><code>name_and_count.tabulate()</code></pre>
 <h3 id="filter_by_col_value">2.4 <code>filter_by_col_value</code></h3>
 <h3 id="filter_by_rank">2.5 <code>filter_by_rank</code></h3>
 <h2 id="part-3.-push-to-backup">Part 3. Push to Backup</h2>
