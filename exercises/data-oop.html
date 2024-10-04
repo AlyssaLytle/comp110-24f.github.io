@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728061563.1713312">
+  <link rel="stylesheet" href="/static/styles.css?v=1728061986.3021717">
 </head>
 
 <body>
@@ -63,7 +63,7 @@
                         <ul class="overview-item"><ul>
 <li><a href="#part-0.-pull-the-skeleton-code">Part 0. Pull the skeleton code</a>
 <ul>
-<li><a href="#understanding-the-exercise-files">Understanding the Exercise files</a></li>
+<li><a href="#understanding-the-exercise-files-install-required-library">Understanding the Exercise Files + Install Required Library</a></li>
 </ul></li>
 <li><a href="#part-1-data-utils">Part 1: Data Utils</a>
 <ul>
@@ -98,7 +98,7 @@
 <li>Return to the File Explorer pane and open the <code>exercises</code> directory. You should see it now contains another directory named <code>ex08</code>. If you expand that directory, you should see the starter files for the code you’ll be writing.</li>
 <li>If you do not see the <code>ex08</code> directory, try once more but selecting <code>"Pull From"</code> and select <code>origin</code> in step 2.</li>
 </ol>
-<h3 id="understanding-the-exercise-files">Understanding the Exercise files</h3>
+<h3 id="understanding-the-exercise-files-install-required-library">Understanding the Exercise Files + Install Required Library</h3>
 <p>In your <code>ex08</code> directory, you should now have the following three files:</p>
 <ul>
 <li><code>analyze_data.py</code>: this is where you are going to import and test your functions from <code>data_utils</code> and methods from <code>DataFrame</code></li>
@@ -107,6 +107,12 @@
 </ul>
 <p>You’ll notice these files already have some skeleton code in them. They provide an outline of what your code will look like, but it’s your job to give them functionality!</p>
 <p>Additionally, you should see a <code>data</code> folder appear in your workspace with some .csv files! This is the data we are going to use in <code>analyze_data.py</code> to test your functions and methods! There are two datasets of popular baby names in New York from different year ranges.</p>
+<h4 id="required-library">Required Library</h4>
+<p>You’ll need to use the <code>tabulate</code> library for visualizing data in this assignment. In order to install this library, paste the following command in your terminal:</p>
+<pre><div class="terminal">python -m pip install tabulate
+</div>
+</pre>
+<p><strong><em>IF YOU RESTART YOUR CONTAINER, YOU’LL HAVE TO RERUN THIS COMMAND!</em></strong></p>
 <h2 id="part-1-data-utils">Part 1: Data Utils</h2>
 <p>For this part, you’re going to be working in <code>data_utils.py</code> to write some functions that will help you pull the data from the .csv files and prepare them to be made into <code>DataFrame</code>s!</p>
 <h3 id="read_csv_rows">1.0 <code>read_csv_rows</code></h3>
