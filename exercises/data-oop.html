@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728052934.1265962">
+  <link rel="stylesheet" href="/static/styles.css?v=1728057806.5721867">
 </head>
 
 <body>
@@ -70,7 +70,6 @@
 <li><a href="#read_csv_rows">1.0 <code>read_csv_rows</code></a></li>
 <li><a href="#column_values">1.1 <code>column_values</code></a></li>
 <li><a href="#columnar">1.2 <code>columnar</code></a></li>
-<li><a href="#test-your-function-2">Test your function</a></li>
 </ul></li>
 <li><a href="#part-2-dataframes-class">Part 2: <code>DataFrames</code> Class</a>
 <ul>
@@ -156,7 +155,7 @@
 <li>Return Type: <code>dict[str, list[str]]</code> - a “table” organized as a dictionary of columns</li>
 </ul>
 <p>Implementation strategy: Establish an empty dictionary to the your column-oriented table you are building up to ultimately return. Loop through each of the column names in the first row of the parameter. Get a list of each column’s values via your <code>column_values</code> function defined previously. Then, associate the column name with the list of its values in the dictionary you established. After looping through every column name, return the dictionary.</p>
-<h3 id="test-your-function-2">Test your function</h3>
+<h4 id="test-your-function-2">Test your function</h4>
 <p>In <code>analyze_data.py</code>, you’ll see there two lines of code to test this function:</p>
 <pre><code>columnar_early_data: dict[str, list[str]] = columnar(early_data)</code></pre>
 <pre><code>columnar_later_data: dict[str, list[str]] = columnar(later_data)</code></pre>
@@ -164,8 +163,104 @@
 <h2 id="part-2-dataframes-class">Part 2: <code>DataFrames</code> Class</h2>
 <p>Now, you are going to add some functionality to the <code>DataFrames</code> class!</p>
 <h3 id="init__">2.0 <code>__init__</code></h3>
+<p>Your <code>DataFrames</code> class is only going to have one attribute: <code>data: dict[str, list[str]]</code>. The idea is that once you reformat your data using <code>columnar</code>, you’ll be able to store it as the <code>data</code> attribute in a <code>DataFrame</code> object.</p>
+<p>Define your <code>DataFrame</code> class, declare your <code>data</code> attribute, and write an <code>__init__</code> method that takes a <code>input_data: dict[str, list[str]]</code> as a parameter and initializes your <code>data</code> attribute to equal <code>input_data</code>.</p>
+<h4 id="test-your-function-3">Test your function</h4>
+<p>You can test your <code>DataFrame</code> class in the REPL with the following small example:</p>
+<pre><div class="terminal">/workspace (main*) » python                                                                         
+>>> from exercises.ex08.DataFrame import DataFrame
+>>> data: dict[str, list[str]] = {"first_name": ["alyssa", "izzi"], "last_name": ["lytle","hinks"]}
+>>> df: DataFrame = DataFrame(data)
+>>> df.data
+{'first_name': ['alyssa', 'izzi'], 'last_name': ['lytle', 'hinks']}
+</div>
+</pre>
+<p>In <code>analyze_data.py</code>, you’ll see there two lines of code to turn both sets of baby name data into <code>DataFrame</code>s:</p>
+<pre><code>df_early: DataFrame = DataFrame(columnar_early_data)</code></pre>
+<pre><code>df_later: DataFrame = DataFrame(columnar_later_data)</code></pre>
+<h4 id="tabulate"><code>tabulate</code></h4>
+<p>You’ll see in <code>DataFrame.py</code>, there is a method called <code>tabulate</code> that has already been written for you! It allows you to visualize your data as a table. In analyze_data.py, you’ll see it called:</p>
+<pre><code>df_early.tabulate()</code></pre>
 <h3 id="add__">2.1 <code>__add__</code></h3>
+<p>For this next method, we are going to give the plus <code>+</code> sign some functionality between two <code>DataFrame</code> objects.</p>
+<p>The main idea behind this method is the following:</p>
+<p>Given two <code>DataFrame</code>s with the same keys (aka column headers), concatenate them to create one large <code>DataFrame</code>.</p>
+<ul>
+<li>Method Name: <code>__add__</code></li>
+<li>Parameter: <code>self</code> (which is a <code>DataFrame</code>) and an additional <code>DataFrame</code> object</li>
+<li>Return Type: <code>DataFrame</code></li>
+</ul>
+<p>You can test your <code>__add__</code> method in the REPL with the following small example:</p>
+<pre><div class="terminal">/workspace (main*) » python                                                                         
+>>> from exercises.ex08.DataFrame import DataFrame
+>>> data: dict[str, list[str]] = {"first_name": ["alyssa", "izzi"], "last_name": ["lytle","hinks"]}
+>>> df: DataFrame = DataFrame(data)
+>>> more_data:  dict[str, list[str]] = {"first_name": ["sophie"], "last_name": ["jiang"]}
+>>> df2: DataFrame = DataFrame(more_data)
+>>> big_frame: DataFrame = df + df2
+>>> big_frame.tabulate()
++--------------+-------------+
+| first_name   | last_name   |
++==============+=============+
+| alyssa       | lytle       |
++--------------+-------------+
+| izzi         | hinks       |
++--------------+-------------+
+| sophie       | jiang       |
++--------------+-------------+
+</div>
+</pre>
+<p>In <code>analyze_data.py</code>, you’ll see the <code>__add__</code> magic method is used:</p>
+<pre><code>df: DataFrame = df_early + df_later</code></pre>
+<p>Try running <code>df.tabulate()</code> to visualize your new dataset! (Warning: it’ll be a loooong output!)</p>
 <h3 id="head">2.2 <code>head</code></h3>
+<p>Let’s find a way to deal with these long outputs! Let’s write a method that let’s us look at a subset of the data! <code>head</code> should return a DataFrame with only the first <code>N</code> (a parameter) rows of data for each column.</p>
+<ul>
+<li>Method name: <code>head</code></li>
+<li>Parameters: <code>self</code> and an <code>int</code> to represent the number of “rows” to include in the resulting <code>DataFrame</code></li>
+<li>Return type: <code>Data Frame</code></li>
+</ul>
+<p>Implementation strategy:</p>
+<ol type="1">
+<li>Establish an empty dictionary that will serve as the returned dictionary this function is building up.</li>
+<li>Loop through each of the columns in the first row of the table given as a parameter.
+<ol type="1">
+<li>Inside of the loop, establish an empty list to store each of the first N values in the column.</li>
+<li>Loop through the first N items of the table’s column,
+<ol type="1">
+<li>Appending each item to the previously list established in step 2.1.</li>
+</ol></li>
+<li>Assign the produced list of column values to the dictionary established in step 1.</li>
+</ol></li>
+<li>Use the dictionary to create a new <code>DataFrame</code> and return it!</li>
+</ol>
+<pre><div class="terminal">/workspace (main*) » python
+>>> from exercises.ex08.DataFrame import DataFrame
+>>> data: dict[str, list[str]] = {"first_name": ["alyssa", "izzi", "sophie", "viktorya"], "last_name": ["lytle","hink
+s", "jiang", "hunanyan"]}
+>>> df: DataFrame = DataFrame(data)
+>>> df.tabulate()
++--------------+-------------+
+| first_name   | last_name   |
++==============+=============+
+| alyssa       | lytle       |
++--------------+-------------+
+| izzi         | hinks       |
++--------------+-------------+
+| sophie       | jiang       |
++--------------+-------------+
+| viktorya     | hunanyan    |
++--------------+-------------+
+>>> subset: DataFrame = df.head(2)
+>>> subset.tabulate()
++--------------+-------------+
+| first_name   | last_name   |
++==============+=============+
+| alyssa       | lytle       |
++--------------+-------------+
+| izzi         | hinks       |
++--------------+-------------+
+</div></pre>
 <h3 id="select">2.3 <code>select</code></h3>
 <h3 id="filter_by_col_value">2.4 <code>filter_by_col_value</code></h3>
 <h3 id="filter_by_rank">2.5 <code>filter_by_rank</code></h3>
