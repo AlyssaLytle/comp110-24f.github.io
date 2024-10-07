@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728305348.2054033">
+  <link rel="stylesheet" href="/static/styles.css?v=1728305347.691902">
 </head>
 
 <body>
@@ -62,7 +62,11 @@
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
 <li><a href="#snippet">Snippet</a></li>
-<li><a href="#solution">Solution</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#video">Video</a></li>
+<li><a href="#image-description">Image Description</a></li>
+</ul></li>
 </ul>
 </</ul>
                     </div>
@@ -70,30 +74,42 @@
             </div>
         </div>
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="snippet">Snippet</h1>
-<pre><code>    def f(x: list[str]) -&gt; str:
-        for y in range(0,len(x)):
-            x[y] += &quot;x&quot;
-        return x[y]
+<pre><code>    def apply_discounts(order_amounts: list[float]) -&gt; list[float]:
+        index: int = 0
+        counter: int = 0
+        discounted_amounts: list[float] = []
 
-    def g(x: list[str]) -&gt; list[str]:
-        new_list: list[str] = []
-        for z in x:
-            new_list.append(str(z))
-        return new_list
+        while index &lt; len(order_amounts):
+            amount: float = order_amounts[index]
 
-    record: list[str] = [&quot;x&quot;, &quot;y&quot;]
-    print(f(record))
-    print(g(record))</code></pre>
+            if amount &gt; 50:
+                discount = 0.10
+            else:
+                discount = 0
+
+            discounted_amount = amount * (1 - discount)
+            discounted_amounts.append(discounted_amount)
+
+            counter += 1
+            index += 1
+
+        print(f&quot;Total orders processed: {counter}&quot;)
+        return discounted_amounts
+
+    def main() -&gt; None:
+        order_amounts: list[float] = [45.0, 75.0, 150.0, 30.0]
+        discounted_amounts: list[float] = apply_discounts(order_amounts)
+        print(discounted_amounts)
+
+    if __name__ == &quot;__main__&quot;:
+        main()</code></pre>
 <h1 id="solution">Solution</h1>
-<p><img class="img-fluid" src="/static/practice-mem-diagrams/lists-02-sol.jpg" alt=""/></p>
-<!-- * Note that for this solution, we did not represent the `range()` function on the heap! We instead just represented `y` as a variable on the stack that gets updated. If you chose to include a "range" object to the heap, we wouldn't take points off, but we are really just looking for the value of `y`!
-
-<img class="img-fluid" src="/static/assets/f23/lists00-sol.png" alt=""  /> --->
-<p><em>Image Descriptions:</em> Under Globals: * Variable f has id 0, it is a function labeled Fn [1-4] on the Heap. * Variable g id 1, it is a function labeled Fn [1-6] on the Heap. * Variable record id 2, it is a list object on the Heap with the type list[str].</p>
-<p>The f function frame has: * Return Address (RA) pointing to line 13. * Variables x and y, where x has id 2, and y with a value of 1 and a crossed-out value of 0. * Return Value (RV) with a value of “yx”.</p>
-<p>The g function frame has: * Return Address (RA) pointing to line 14. * Variables x has id 2, new_list has id 3 which is list object on the Heap with type list[str]. * Variable z has the crossed-out string “xx”, with a final value of “yx”. * Return Value (RV) has id 3.</p>
-<p>The Heap section shows two list objects and two string objects: * The first list on the heap has two values. The first value is “xx” with a crossed-out value of “x”. The second value is “yx” with a crossed-out value of “y”. * The second list on the heap has two values. The first value is “xx” and the second value is “yx”.</p>
-<p>The Output section at the top first prints “yx”, then the list [“xx”,”yx”].</p>
+<p><em>(Coming Soon)</em></p>
+<!-- <img class="img-fluid" src="/static/practice-mem-diagrams/analyze_string.jpg" alt="Image Description Here"  /> -->
+<h2 id="video">Video</h2>
+<p><em>(Video Coming Soon)</em></p>
+<h2 id="image-description">Image Description</h2>
+<p><em>(Coming Soon)</em></p>
 </div>
 
        
@@ -101,7 +117,7 @@
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s): Alyssa Lytle</span>
+      <span> Contributor(s): Viktorya</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
