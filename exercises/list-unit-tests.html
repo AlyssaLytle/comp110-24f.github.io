@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728580295.406022">
+  <link rel="stylesheet" href="/static/styles.css?v=1728658321.3095307">
 </head>
 
 <body>
@@ -52,8 +52,35 @@
       </div>
     </div>
 
-    <div class="container">
-                <div class="content"><p>In this exercise you will continue building list utility functions. In contrast with the previous exercise, for EX05 you will get practice writing unit tests for your functions which gives you more reassurance of their correctness and makes testing your functions easier. Your function implementations may only make use of the built-in <code>len</code> function, and a <code>list</code> object’s methods <code>append</code> and <code>pop</code>.</p>
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#list-unit-tests">List Unit Tests</a>
+<ul>
+<li><a href="#skeleton-code-and-testing-setup">0. Skeleton Code and Testing Setup</a></li>
+<li><a href="#only_evens-25-points">1. <code>only_evens</code> – 25 Points</a></li>
+<li><a href="#concat-25-points">2. <code>concat</code> – 25 Points</a></li>
+<li><a href="#sub-30-points">3. <code>sub</code> – 30 Points</a></li>
+</ul></li>
+<li><a href="#unit-tests">4. Unit Tests</a>
+<ul>
+<li><a href="#make-a-backup-checkpoint-commit">5. Make a Backup Checkpoint “Commit”</a></li>
+<li><a href="#submit-to-gradescope-for-grading">6. Submit to Gradescope for Grading</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="list-unit-tests">List Unit Tests</h1>
+<p>In this exercise you will continue building list utility functions. In contrast with the previous exercise, for EX05 you will get practice writing unit tests for your functions which gives you more reassurance of their correctness and makes testing your functions easier. Your function implementations may only make use of the built-in <code>len</code> function, and a <code>list</code> object’s methods <code>append</code> and <code>pop</code>.</p>
 <p>Specifically off-limits in this exercise are the following capabilities which you would only know if you have prior experience in Python. Making use of any of the following will result in no credit for the function you use them in:</p>
 <ul>
 <li>Cannot use other built-in function besides <code>len</code> - specifically not <code>max</code>, <code>min</code>, <code>slice</code></li>
@@ -160,7 +187,10 @@ from exercises.ex05.utils import concat</code></pre>
 <p>In the file explorer pane, look to find the zip file named “yy.mm.dd-hh.mm-exercises-ex05.zip”. The “yy”, “mm”, “dd”, and so on, are timestamps with the current year, month, day, hour, minute. If you right click on this file and select “Reveal in File Explorer” on Windows or “Reveal in Finder” on Mac, the zip file’s location on your computer will open. Upload this file to Gradescope to submit your work for this exercise.</p>
 <p>Autograding will take a few moments to complete. If there are issues reported, you are encouraged to try and resolve them and resubmit. If for any reason you aren’t receiving full credit and aren’t sure what to try next, come give us a visit in office hours!</p>
 </div>
-            </div>
+
+       
+
+    </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
       <span> Contributor(s):        Marlee Walls,        Kris Jordan,        Kaki Ryan, Alyssa Byrnes</span>
