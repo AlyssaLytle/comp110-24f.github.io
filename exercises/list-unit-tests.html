@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728659009.8268595">
+  <link rel="stylesheet" href="/static/styles.css?v=1728662787.6224298">
 </head>
 
 <body>
@@ -66,8 +66,9 @@
 <li><a href="#forbidden-constructs">Forbidden Constructs</a></li>
 <li><a href="#skeleton-code-and-testing-setup">0. Skeleton Code and Testing Setup</a></li>
 <li><a href="#only_evens">1. <code>only_evens</code></a></li>
-<li><a href="#sub-30-points">2. <code>sub</code> – 30 Points</a></li>
+<li><a href="#sub">2. <code>sub</code></a></li>
 </ul></li>
+<li><a href="#add_at_index">3. <code>add_at_index</code></a></li>
 <li><a href="#unit-tests">4. Unit Tests</a>
 <ul>
 <li><a href="#make-a-backup-checkpoint-commit">5. Make a Backup Checkpoint “Commit”</a></li>
@@ -126,7 +127,7 @@ Define your function with the following signature.
     
 `concat` _must NOT_ mutate (modify) either of the arguments passed to it.  
  -->
-<h2 id="sub-30-points">2. <code>sub</code> – 30 Points</h2>
+<h2 id="sub">2. <code>sub</code></h2>
 <p>In this exercise you will write a function named <code>sub</code>. Given a <code>list</code> of <code>ints</code>, a start index, and an end index (not inclusive), <code>sub</code> should generate a List which is a subset of the given list, between the specified start index and the end index - 1. <em>The <code>sub</code> function must not mutate (modify) its input list.</em></p>
 <p>Example usage:</p>
 <pre class="plaintext"><code>&gt;&gt;&gt; a_list = [10, 20, 30, 40]
@@ -140,15 +141,17 @@ Define your function with the following signature.
 </ol>
 <p>If the start index is negative, start from the beginning of the list. If the end index is greater than the length of the list, end with the end of the list.</p>
 <p>If the length of the list is 0, start is greater than or equal to the length of the list, or end is at most 0, return the empty list.</p>
+<h1 id="add_at_index">3. <code>add_at_index</code></h1>
+<!-- needs a description, should take a list, an element, and an index as arguments and modify the list to place that element at that index -->
 <h1 id="unit-tests">4. Unit Tests</h1>
-<p>Also inside the <code>exercises/ex05</code> directory, create a file named <code>utils_test.py</code>. Add a docstring and establish an <code>__author__</code> in this file as well.</p>
-<p>For each function from below (<code>only_evens</code>, <code>sub</code>, <code>concat</code>), you are to define at least <strong>3x unit test</strong> functions. Remember that a unit test function starts with <code>test_</code>.</p>
+<p>Now inside <code>utils_test.py</code>, you will write unit tests.</p>
+<p>For each function from (<code>only_evens</code>, <code>sub</code>, <code>add_at_index</code>), you are to define at least <strong>3x unit test</strong> functions. Remember that a unit test function starts with <code>test_</code>.</p>
 <p>The 3 unit tests should consist of:</p>
 <ul>
 <li>One edge case</li>
-<li>Two use cases</li>
+<li>Two use cases: one that tests what the function should return and one that tests how it should mutate (or not mutate) its input.</li>
 </ul>
-<p>Include descriptive function names and docstrings, so that it captures what is being tested.</p>
+<p>Include descriptive function names and docstrings, so that it captures what is being tested. <strong>Use different use cases than the usage examples provided in this writeup!</strong></p>
 <p>The command to run your tests is <code>python -m pytest exercises/ex05</code> or you can run them using the beaker tab in VSCode if it is working (do note the VSCode testing feature tends to be a bit flaky).</p>
 <p>Once you’re ready to import and begin testing your skeletons, you can add the following import lines, corresponding to the functions you have completed, to do so:</p>
 <pre class="plaintext"><code>from exercises.ex05.utils import only_evens
