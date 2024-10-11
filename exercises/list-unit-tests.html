@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728658812.1945543">
+  <link rel="stylesheet" href="/static/styles.css?v=1728659009.8268595">
 </head>
 
 <body>
@@ -63,6 +63,7 @@
                         <ul class="overview-item"><ul>
 <li><a href="#list-unit-tests">List Unit Tests</a>
 <ul>
+<li><a href="#forbidden-constructs">Forbidden Constructs</a></li>
 <li><a href="#skeleton-code-and-testing-setup">0. Skeleton Code and Testing Setup</a></li>
 <li><a href="#only_evens">1. <code>only_evens</code></a></li>
 <li><a href="#sub-30-points">2. <code>sub</code> – 30 Points</a></li>
@@ -79,7 +80,9 @@
             </div>
         </div>
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="list-unit-tests">List Unit Tests</h1>
-<p>In this exercise you will continue building list utility functions. In contrast with the previous exercise, for EX05 you will get practice writing unit tests for your functions which gives you more reassurance of their correctness and makes testing your functions easier. Your function implementations may only make use of the built-in <code>len</code> function, and a <code>list</code> object’s methods <code>append</code> and <code>pop</code>.</p>
+<p>In this exercise you will continue building list utility functions. In contrast with the previous exercise, for EX05 you will get practice writing unit tests for your functions which gives you more reassurance of their correctness and makes testing your functions easier.</p>
+<h2 id="forbidden-constructs">Forbidden Constructs</h2>
+<p>Your function implementations may only make use of subscription notation, the built-in <code>len</code> function, and a <code>list</code> object’s methods <code>append</code> and <code>pop</code>.</p>
 <p>Specifically off-limits in this exercise are the following capabilities which you would only know if you have prior experience in Python. Making use of any of the following will result in no credit for the function you use them in:</p>
 <ul>
 <li>Cannot use other built-in function besides <code>len</code> - specifically not <code>max</code>, <code>min</code>, <code>slice</code></li>
@@ -88,21 +91,6 @@
 <li>Cannot use the <code>list</code> class’s <code>+</code> or <code>==</code> operators (you can still use <code>+</code> with <code>int</code> and <code>str</code> types, though!) nor built-in methods beyond <code>append</code> and <code>pop</code>
 <ul>
 <li>Note: You can use + and == for <em>individual items</em> and values, just not entire <code>list</code> objects.</li>
-</ul></li>
-</ul>
-<p>Assignment Outline</p>
-<ul>
-<li><code>only_evens</code>
-<ul>
-<li>Unit Tests</li>
-</ul></li>
-<li><code>concat</code>
-<ul>
-<li>Unit Tests</li>
-</ul></li>
-<li><code>sub</code>
-<ul>
-<li>Unit Tests</li>
 </ul></li>
 </ul>
 <p>Note: Even if your functions are not 100% correct or finished, you can get full credit for the unit tests if you set up a function skeleton and write your tests assuming correct functionality.</p>
