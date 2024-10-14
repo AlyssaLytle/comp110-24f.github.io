@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728849274.4936678">
+  <link rel="stylesheet" href="/static/styles.css?v=1728916063.9965317">
 </head>
 
 <body>
@@ -153,7 +153,7 @@ Example usage:
 <p>If the start index is negative, start from the beginning of the list. If the end index is greater than the length of the list, end with the end of the list.</p>
 <p>If the length of the list is 0, start is greater than or equal to the length of the list, or end is at most 0, return the empty list.</p>
 <h2 id="add_at_index">3. <code>add_at_index</code></h2>
-<p>Given a list of ints, an int element, and an index, <code>add_at_index</code> should modify the input list to place the element at the given index. <code>add_at_index</code> should return nothing. <em>The <code>add_at_index</code> function <strong>should</strong> mutate its input list</em></p>
+<p>Given a list of ints, an int element, and an index, <code>add_at_index</code> should modify the input list to place the element at the given index. <code>add_at_index</code> should return nothing. <em>The <code>add_at_index</code> function <strong>should</strong> mutate its input list.</em></p>
 <p>If the index is out of range (index &lt; 0 or index &gt; len(list)), <code>add_at_index</code> should throw an IndexError.</p>
 Example usage:
 <pre>
@@ -179,7 +179,7 @@ IndexError: Index is out of bounds for the input list
 </ol>
 <p>If the index given is invalid (out of range), raise the following error:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="cf">raise</span> <span class="pp">IndexError</span>(<span class="st">&quot;Index is out of bounds for the input list&quot;</span>)</span></code></pre></div>
-<!-- needs a description, should take a list, an element, and an index as arguments and modify the list to place that element at that index -->
+<p><em>Hint:</em> For most cases, you will need to add space at the end of the list (i.e. append something to the end of the list), then shift everything to the right of the index in order to make space for the input element, before you can insert the new element at the correct index.</p>
 <h2 id="unit-tests">4. Unit Tests</h2>
 <p>Now inside <code>utils_test.py</code>, you will write unit tests.</p>
 <p>For each function from (<code>only_evens</code>, <code>sub</code>, <code>add_at_index</code>), you are to define at least <strong>3x unit test</strong> functions. Remember that a unit test function starts with <code>test_</code>.</p>
