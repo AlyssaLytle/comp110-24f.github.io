@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728938157.7860947">
+  <link rel="stylesheet" href="/static/styles.css?v=1728938248.502045">
 </head>
 
 <body>
@@ -255,17 +255,17 @@
 <span id="cb9-47"><a href="#cb9-47" aria-hidden="true"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: for... in... range() loops</span></span>
 <span id="cb9-48"><a href="#cb9-48" aria-hidden="true"></a>    <span class="co"># List x</span></span>
 <span id="cb9-49"><a href="#cb9-49" aria-hidden="true"></a>    x <span class="op">=</span> [<span class="dv">9</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">5</span>]</span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(x)):</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(x)):</span>
 <span id="cb9-51"><a href="#cb9-51" aria-hidden="true"></a>        <span class="bu">print</span>(x[i])</span>
 <span id="cb9-52"><a href="#cb9-52" aria-hidden="true"></a></span>
 <span id="cb9-53"><a href="#cb9-53" aria-hidden="true"></a>    <span class="co"># List y</span></span>
 <span id="cb9-54"><a href="#cb9-54" aria-hidden="true"></a>    y <span class="op">=</span> [<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;turtle&quot;</span>, <span class="st">&quot;elephant&quot;</span>]</span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(y)):</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(y)):</span>
 <span id="cb9-56"><a href="#cb9-56" aria-hidden="true"></a>        <span class="bu">print</span>(y[i])</span>
 <span id="cb9-57"><a href="#cb9-57" aria-hidden="true"></a></span>
 <span id="cb9-58"><a href="#cb9-58" aria-hidden="true"></a>    <span class="co"># List z</span></span>
 <span id="cb9-59"><a href="#cb9-59" aria-hidden="true"></a>    z <span class="op">=</span> [<span class="st">&quot;z&quot;</span>]</span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(z)):</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(z)):</span>
 <span id="cb9-61"><a href="#cb9-61" aria-hidden="true"></a>        <span class="bu">print</span>(z[i])</span></code></pre></div>
 <ol start="10" type="1">
 <li><em><code>While</code> Loops:</em> Structure: The <code>while</code> loop continues as long as a specified condition is true. Control: Requires manual control of loop variables, such as initialization and incrementing the index.</li>
@@ -333,35 +333,35 @@
 <span id="cb10-55"><a href="#cb10-55" aria-hidden="true"></a>    <span class="co"># </span><span class="al">TODO</span><span class="co">: for... in... range() loops</span></span>
 <span id="cb10-56"><a href="#cb10-56" aria-hidden="true"></a>    <span class="co"># List x</span></span>
 <span id="cb10-57"><a href="#cb10-57" aria-hidden="true"></a>    x <span class="op">=</span> [<span class="dv">9</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">5</span>]</span>
-<span id="cb10-58"><a href="#cb10-58" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(x)):</span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(x)):</span>
 <span id="cb10-59"><a href="#cb10-59" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Index </span><span class="sc">{i}</span><span class="ss">: </span><span class="sc">{x</span>[i]<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb10-60"><a href="#cb10-60" aria-hidden="true"></a></span>
 <span id="cb10-61"><a href="#cb10-61" aria-hidden="true"></a>    <span class="co"># List y</span></span>
 <span id="cb10-62"><a href="#cb10-62" aria-hidden="true"></a>    y <span class="op">=</span> [<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;turtle&quot;</span>, <span class="st">&quot;elephant&quot;</span>]</span>
-<span id="cb10-63"><a href="#cb10-63" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(y)):</span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(y)):</span>
 <span id="cb10-64"><a href="#cb10-64" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Index </span><span class="sc">{i}</span><span class="ss">: </span><span class="sc">{y</span>[i]<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb10-65"><a href="#cb10-65" aria-hidden="true"></a></span>
 <span id="cb10-66"><a href="#cb10-66" aria-hidden="true"></a>    <span class="co"># List z</span></span>
 <span id="cb10-67"><a href="#cb10-67" aria-hidden="true"></a>    z <span class="op">=</span> [<span class="st">&quot;z&quot;</span>]</span>
-<span id="cb10-68"><a href="#cb10-68" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(z)):</span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(z)):</span>
 <span id="cb10-69"><a href="#cb10-69" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Index </span><span class="sc">{i}</span><span class="ss">: </span><span class="sc">{z</span>[i]<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb10-70"><a href="#cb10-70" aria-hidden="true"></a></span>
 <span id="cb10-71"><a href="#cb10-71" aria-hidden="true"></a>    <span class="co"># OR...</span></span>
 <span id="cb10-72"><a href="#cb10-72" aria-hidden="true"></a></span>
 <span id="cb10-73"><a href="#cb10-73" aria-hidden="true"></a>    x <span class="op">=</span> [<span class="dv">9</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">8</span>, <span class="dv">5</span>]</span>
-<span id="cb10-74"><a href="#cb10-74" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(x)):</span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(x)):</span>
 <span id="cb10-75"><a href="#cb10-75" aria-hidden="true"></a>        <span class="bu">print</span>(i)</span>
 <span id="cb10-76"><a href="#cb10-76" aria-hidden="true"></a>        <span class="bu">print</span>(x[i])</span>
 <span id="cb10-77"><a href="#cb10-77" aria-hidden="true"></a></span>
 <span id="cb10-78"><a href="#cb10-78" aria-hidden="true"></a>    <span class="co"># List y</span></span>
 <span id="cb10-79"><a href="#cb10-79" aria-hidden="true"></a>    y <span class="op">=</span> [<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;turtle&quot;</span>, <span class="st">&quot;elephant&quot;</span>]</span>
-<span id="cb10-80"><a href="#cb10-80" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(y)):</span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(y)):</span>
 <span id="cb10-81"><a href="#cb10-81" aria-hidden="true"></a>        <span class="bu">print</span>(i)</span>
 <span id="cb10-82"><a href="#cb10-82" aria-hidden="true"></a>        <span class="bu">print</span>(y[i])</span>
 <span id="cb10-83"><a href="#cb10-83" aria-hidden="true"></a></span>
 <span id="cb10-84"><a href="#cb10-84" aria-hidden="true"></a>    <span class="co"># List z</span></span>
 <span id="cb10-85"><a href="#cb10-85" aria-hidden="true"></a>    z <span class="op">=</span> [<span class="st">&quot;z&quot;</span>]</span>
-<span id="cb10-86"><a href="#cb10-86" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(z)):</span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(z)):</span>
 <span id="cb10-87"><a href="#cb10-87" aria-hidden="true"></a>        <span class="bu">print</span>(i)</span>
 <span id="cb10-88"><a href="#cb10-88" aria-hidden="true"></a>        <span class="bu">print</span>(z[i])</span></code></pre></div>
 <ol start="12" type="1">
