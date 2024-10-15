@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1728938262.3776097">
+  <link rel="stylesheet" href="/static/styles.css?v=1729012589.795945">
 </head>
 
 <body>
@@ -203,6 +203,24 @@ from exercises.ex05.utils import add_at_index
 </div>
 </pre>
 <p>If your screen is large enough, you are encouraged to open these files side-by-side in VSCode by dragging the tab of one to the right side of VSCode so that it changes to a split pane view. Closing your file explorer can help give you additional horizontal space.</p>
+<p>For the <code>add_at_index</code> function, when testing that the function raises an <code>IndexError</code>, a different approach is used. An <code>IndexError</code> is an <em>exception</em>, and in order to catch an exception, the <code>pytest.raises</code> context manager is employed.</p>
+<p>Here is a skeleton code of how to <em>raise</em> or catch this exception:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="im">import</span> pytest</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="kw">def</span> test_add_at_index_raises_indexerror():</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Test that add_at_index raises an IndexError for an invalid index.&quot;&quot;&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    <span class="co"># your object to pass to add_at_index function</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">IndexError</span>):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>        add_at_index(<span class="op">&lt;</span>list_object<span class="op">&gt;</span>, <span class="op">&lt;</span>index_to_insert_num<span class="op">&gt;</span>, <span class="op">&lt;</span>value_to_add<span class="op">&gt;</span>) </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>        <span class="co"># an IndexError is raised for the case when the add_at_index is given an &lt;index_to_insert_num&gt; </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>        <span class="co"># that is greater than the length of our &lt;list_object&gt;</span></span></code></pre></div>
+<p>What this is saying:</p>
+<ul>
+<li>The code inside the <code>with pytest.raises(IndexError):</code> block expects an <code>IndexError</code> to be raised. If the exception occurs as expected, the test passes.</li>
+<li>If the exception is not raised, or if a different exception is raised, the test will fail, indicating that the function is not handling the invalid input correctly.</li>
+</ul>
+<p>We use <code>pytest.raises</code> instead of testing for equality using <code>==</code> because exceptions are not returned values; they are events that interrupt the normal flow of execution. When testing for errors, it is not possible to check for an error by comparing a return value. Instead, <code>pytest.raises</code> allows testing that the correct exception is triggered during the execution of a function.</p>
+<p>Notice that in order to use <code>pytest</code>, it must be imported. As shown in the example structure above, add the import line for pytest along with the other import lines at the top of the test file.</p>
 <h2 id="make-a-backup-checkpoint-commit">5. Make a Backup Checkpoint “Commit”</h2>
 <p>As you make progress on this exercise, making backups is encouraged.</p>
 <ol type="1">
@@ -230,7 +248,7 @@ from exercises.ex05.utils import add_at_index
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s):        Marlee Walls,        Kris Jordan,        Kaki Ryan,        Alyssa Byrnes,        Sophie Jiang, Izzi Hinks</span>
+      <span> Contributor(s):        Marlee Walls,        Kris Jordan,        Kaki Ryan,        Alyssa Byrnes,        Sophie Jiang,        Izzi Hinks, Viktorya Hunanyan</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
