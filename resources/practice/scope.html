@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1729269722.2448423">
+  <link rel="stylesheet" href="/static/styles.css?v=1729366033.7717934">
 </head>
 
 <body>
@@ -114,14 +114,14 @@
 <ol type="1">
 <li><p>False Global variables are not limited to the function scope; they are accessible throughout the entire program unless shadowed by a local variable of the same name within a function.</p></li>
 <li><p>True Variables in different scopes (such as global and local scope) can have the same name but will store different values within their respective scopes.</p></li>
-<li><p>True If an object is passed to a function and modified, the changes are reflected globally because Python passes a reference to the object, not a copy. Remember, that we also pass values to the function and that value is the whatever is in your halfbox in memory. This will be a reference (reference number (id number)). Remember, to mutate an object, we pass by reference!</p></li>
-</ol>
+<li><p>True If an object is passed to a function and modified, the changes are reflected globally because Python passes a reference to the object, not a copy. Remember, that we also pass values to the function and that value is the whatever is in your halfbox in memory. This will be a reference (reference number (id number)). Remember, to mutate an object, we pass by reference!</p>
 <ul>
-<li>3a. False The function does not copy the object. Instead, it directly manipulates the original object via the reference.</li>
-</ul>
-<p>3b. True To manipulate an object, it must be passed as a parameter to the function, allowing the function to access and modify it.</p>
-<p>3c. True The function operates on the original object via the reference held by the parameter.</p>
-<p>3d. True The reference (memory address/id number) held in the function parameter is the same as the reference of the original object, so any changes to the object in the function are reflected globally.</p>
+<li>3a. False; The function does not copy the object. Instead, it directly manipulates the original object via the reference.</li>
+<li>3b. True; To manipulate an object, it must be passed as a parameter to the function, allowing the function to access and modify it.</li>
+<li>3c. True; The function operates on the original object via the reference held by the parameter.</li>
+<li>3d. True; The reference (memory address/id number) held in the function parameter is the same as the reference of the original object, so any changes to the object in the function are reflected globally.</li>
+</ul></li>
+</ol>
 <p><em>More solutions to come</em></p>
 </div>
 
