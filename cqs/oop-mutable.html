@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1729525651.9135106">
+  <link rel="stylesheet" href="/static/styles.css?v=1729525736.291914">
 </head>
 
 <body>
@@ -80,8 +80,8 @@
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="intro-to-object-oriented-programming">Intro To Object Oriented Programming</h1>
 <h2 id="introduction">Introduction</h2>
 <p>Previously, we’ve talked about whether or not a function <em>mutates</em> (aka changes) a variable.</p>
-<p>For example, we might want a function that takes a <code>list</code> as an input and <em>mutates</em> that list, OR we might want a function that takes a <code>list</code> as an input does NOT mutate that list, but instead tells us something about that list, or returns a new <code>list</code> with changes made to it.</p>
-<p>This ideas also applies to methods! As we’ve talked about previously, methods often <em>mutate</em> (or change) the object they belong to. Think about our <code>Pizza</code> class from the lesson. The <code>add_toppings</code> method <em>mutates</em> a Pizza object by changing the value of <code>self.toppings</code>. On the other hand, the <code>price</code> method did not change the value of any attributes, so it does NOT mutate the Pizza object.</p>
+<p>For example, we might want a function that takes a <code>list</code> as an input and <em>mutates</em> that list, OR we might want a function that takes a <code>list</code> as an input, does NOT mutate that list, but instead tells us something about that list or returns a new <code>list</code> with changes made to it.</p>
+<p>This idea also applies to methods! As we’ve talked about previously, methods often <em>mutate</em> (or change) the object they belong to. Think about our <code>Pizza</code> class from the lesson. The <code>add_toppings</code> method <em>mutates</em> a Pizza object by changing the value of <code>self.toppings</code>. On the other hand, the <code>price</code> method did not change the value of any attributes, so it does NOT mutate the Pizza object.</p>
 <p>For this CQ, we are going to create and compare two similar methods. They both have similar functionality, but one <em>mutates</em> the class object and one does not.</p>
 <h2 id="set-up-files">0. Set up files</h2>
 <p>Create a new folder inside <code>CQs</code> called <code>cq09</code> and a new file inside of it titled <code>point.py</code>.</p>
@@ -95,7 +95,7 @@
 <p>Now, define a constructor (aka an <code>__init__</code> method) that takes as input <code>x_init: float</code> and <code>y_init: float</code> and assigns those as the initial values for the attributes <code>x</code> and <code>y</code>.</p>
 <h2 id="mutating-method-pointscale_by">2. Mutating Method: <code>Point#scale_by</code></h2>
 <p>Now, you are going to write a method that belongs to the Point class and <em>mutates</em> a <code>Point</code>.</p>
-<p>It’ll should the following properties:</p>
+<p>It should have the following properties:</p>
 <ul>
 <li>Method name: <code>scale_by</code></li>
 <li>Parameters: <code>self</code> and <code>factor: int</code> (In general, the first parameter of a method should always be <code>self</code>)</li>
@@ -104,7 +104,7 @@
 </ul>
 <h2 id="non-mutating-method-pointscale">3. Non-Mutating Method: <code>Point#scale</code></h2>
 <p>Now, you are going to write a method that belongs to the Point class and instead of <em>mutating</em> a <code>Point</code>, it creates a new <code>Point</code>.</p>
-<p>It’ll should the following properties:</p>
+<p>It should have the following properties:</p>
 <ul>
 <li>Method name: <code>scale</code></li>
 <li>Parameters: <code>self</code> and <code>factor: int</code> (In general, the first parameter of a method should always be <code>self</code>)</li>
@@ -113,7 +113,8 @@
 </ul>
 <p>*Reminder: if we are defining a method that returns its own type (e.g. a method in our <code>Point</code> class that returns a <code>Point</code>), we also need to add the line <code>from __future__ import annotations</code> to the top of our file. For an example, look back at our <code>Pizza</code> class!</p>
 <h2 id="checking-your-methods-for-correctness">Checking Your Methods For Correctness</h2>
-<p>You can check your methods by creating a new file in your <code>cq09</code> file called <code>make_points.py</code> and importing your <code>Point</code> class using <code>from CQs.cq09.point import Point</code>. Then create a new point and call the methods.</p>
+<p>Check your methods by creating a new file in your <code>CQ09</code> file called <code>make_points.py</code> and importing your <code>Point</code> class using <code>from lessons.CQ09.point import Point</code>. Then create a new point and call the methods.</p>
+<p>Check that calling <code>Point#scale</code> does not mutate the <code>x</code> and <code>y</code> values of your original Point.</p>
 <h2 id="submission">4. Submission</h2>
 <p>Create your submission with the following command:</p>
 <pre><code>python -m tools.submission CQs/cq09</code></pre>
