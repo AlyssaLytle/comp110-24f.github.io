@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1729525720.4499059">
+  <link rel="stylesheet" href="/static/styles.css?v=1729630069.5349824">
 </head>
 
 <body>
@@ -107,13 +107,15 @@
 <ol start="6" type="1">
 <li>Suppose you have the following function, designed to calculate the sum of the elements in a list.</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">def</span> find_even(nums: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    idx: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="cf">while</span> idx <span class="op">&lt;</span> <span class="bu">len</span>(nums):</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>        <span class="cf">if</span> nums[idx] <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>            <span class="cf">return</span> idx</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>        idx <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    <span class="cf">return</span> <span class="op">-</span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">def</span> sum_numbers(numbers: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="cf">if</span> <span class="bu">len</span>(numbers) <span class="op">==</span> <span class="dv">0</span>: </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>        <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">&quot;Empty list - no elements to add&quot;</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    total: <span class="bu">int</span> <span class="op">=</span> numbers[<span class="dv">0</span>]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(numbers)): </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>        total <span class="op">+=</span> numbers[i]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>        </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>    <span class="cf">return</span> total</span></code></pre></div>
 <p>Fill in this unit test with a use case.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">def</span> test_list_sum_use_case() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;Put code here.&quot;&quot;&quot;</span></span></code></pre></div>
@@ -201,8 +203,20 @@
 <li>Solution below:</li>
 </ol>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="kw">def</span> test_list_sum_use_case() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a>    nums <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a>    <span class="cf">assert</span> <span class="bu">sum</span>(nums) <span class="op">==</span> <span class="dv">10</span></span></code></pre></div>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a>    <span class="co"># Test case 1: Normal list of positive numbers</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a>    <span class="cf">assert</span> sum_numbers([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]) <span class="op">==</span> <span class="dv">15</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true"></a>    <span class="co"># Test case 2: List with negative numbers</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true"></a>    <span class="cf">assert</span> sum_numbers([<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">4</span>, <span class="op">-</span><span class="dv">5</span>]) <span class="op">==</span> <span class="op">-</span><span class="dv">15</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true"></a>    <span class="co"># Test case 3: Mixed positive and negative numbers</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true"></a>    <span class="cf">assert</span> sum_numbers([<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">3</span>]) <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true"></a>    <span class="co"># Test case 4: List with a single element</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true"></a>    <span class="cf">assert</span> sum_numbers([<span class="dv">10</span>]) <span class="op">==</span> <span class="dv">10</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true"></a>    <span class="co"># Do not worry about handling the exception! </span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true"></a>    <span class="co"># That is out of the scope of the class :)</span></span></code></pre></div>
 <hr />
 <ol start="7" type="1">
 <li>Solution below:</li>
