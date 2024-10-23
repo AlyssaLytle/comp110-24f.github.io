@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1729630076.4272027">
+  <link rel="stylesheet" href="/static/styles.css?v=1729656358.4581988">
 </head>
 
 <body>
@@ -88,7 +88,7 @@
 <li>3c. The function does not create a copy of the object rather one of it’s parameters holds the reference number to the object. (T/F)</li>
 <li>3d. The variable that holds the reference to the object in the function frame, holds the same value as the varibale that instantiated the object in the Globals frame. (T/F)</li>
 </ul></li>
-<li>For the following code snippet, create a memory diagram of what is happening. Explain we are able to do line 9:</li>
+<li>For the following code snippet, create a memory diagram of what is happening. Explain why we are able to do line 9:</li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>xs <span class="op">=</span> <span class="st">&quot;01&quot;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>ys <span class="op">=</span> <span class="st">&quot;23&quot;</span></span>
@@ -112,17 +112,80 @@
 <h1 id="solutions">Solutions</h1>
 <h2 id="conceptual-solutions">Conceptual Solutions</h2>
 <ol type="1">
-<li><p>False Global variables are not limited to the function scope; they are accessible throughout the entire program unless shadowed by a local variable of the same name within a function.</p></li>
-<li><p>True Variables in different scopes (such as global and local scope) can have the same name but will store different values within their respective scopes.</p></li>
-<li><p>True If an object is passed to a function and modified, the changes are reflected globally because Python passes a reference to the object, not a copy. Remember, that we also pass values to the function and that value is the whatever is in your halfbox in memory. This will be a reference (reference number (id number)). Remember, to mutate an object, we pass by reference!</p>
-<ul>
-<li>3a. False; The function does not copy the object. Instead, it directly manipulates the original object via the reference.</li>
-<li>3b. True; To manipulate an object, it must be passed as a parameter to the function, allowing the function to access and modify it.</li>
-<li>3c. True; The function operates on the original object via the reference held by the parameter.</li>
-<li>3d. True; The reference (memory address/id number) held in the function parameter is the same as the reference of the original object, so any changes to the object in the function are reflected globally.</li>
-</ul></li>
+<li>False Global variables are not limited to the function scope; they are accessible throughout the entire program unless shadowed by a local variable of the same name within a function.</li>
 </ol>
-<p><em>More solutions to come</em></p>
+<p>Example:</p>
+<pre><code>    x = 10  # Global variable
+
+    def func():
+        print(x)  # Accesses the global variable
+
+    func()  # Output: 10</code></pre>
+<p>Furthermore, when a <code>function_1</code> is called inside of the body of another function, <code>function_2</code>, <code>function_1</code> is accesible because it is global. Python will first check in <code>function_1</code>’s frame to see if <code>function_2</code> is defined and if it is not then it will move up to the last frame that does not have an RV. Once it does this, it will check again if function_2 is defined and if it is not, it will continue doing this until it has found <code>function_2</code> defined in a frame. It will eventially get to the globals frame where it will see function_2 is defined and holds a referene number that is defining what function_2 is. At this point, Python will understand that <code>function_1</code> is a function and return to the line where it was encountered in <code>function_2</code>’s body, now recognizing <code>function_1</code> as callable and executing it accordingly.</p>
+<hr />
+<ol start="2" type="1">
+<li>True Variables in different scopes (such as global and local scope) can have the same name but will store different values within their respective scopes.</li>
+</ol>
+<p>Example:</p>
+<pre><code>    x = 10  # Global variable
+
+    def func():
+        x = 20  # Local variable with the same name
+        print(x)  # Output: 20 (Local scope)
+
+    func()
+    print(x)  # Output: 10 (Global scope)</code></pre>
+<p>For more examples, please refer to the memory diagram page.</p>
+<hr />
+<ol start="3" type="1">
+<li>True If an object is passed to a function and modified, the changes are reflected globally because Python passes a reference to the object, not a copy. Remember, that we also pass values to the function and that value is the whatever is in your halfbox in memory. This will be a reference (reference number (id number)). Remember, to mutate an object, we pass by reference!</li>
+</ol>
+<p>Example:</p>
+<pre><code>lst = [1, 2, 3]  # Global object (mutable)
+
+def modify_list(some_list):
+    some_list.append(4)
+
+modify_list(lst)
+print(lst)  # Output: [1, 2, 3, 4]</code></pre>
+<p>For more examples, please refer to the memory diagram page.</p>
+<p>3a. False; The function does not copy the object. Instead, it directly manipulates the original object via the reference.</p>
+<p>3b. True; To manipulate an object, it must be passed as a parameter to the function, allowing the function to access and modify it.</p>
+<p>3c. True; The function operates on the original object via the reference held by the parameter.</p>
+<p>3d. True; The reference (memory address/id number) held in the function parameter is the same as the reference of the original object, so any changes to the object in the function are reflected globally.</p>
+<hr />
+<ol start="4" type="1">
+<li>On line 9, <code>xs[x_idx]</code> and <code>ys[y_idx]</code> access characters from the strings <code>xs</code> and <code>ys</code> using indexing. A memory diagram would show the <code>Globals</code> frame holding <code>xs</code> and <code>ys</code> as string objects. The <code>x_idx</code> and <code>y_idx</code> variables exist within the local frame of <code>get_coords</code>, indexing into <code>xs</code> and <code>ys</code>. The print statement outputs pairs of characters from xs and ys, i.e., <code>(0,2), (0,3), (1,2), (1,3)</code>.</li>
+</ol>
+<p>The ability to perform this operation comes from the fact that <code>xs</code> and <code>ys</code> are global variables, so they are accessible inside get_coords().</p>
+<hr />
+<ol start="5" type="1">
+<li>Example below:</li>
+</ol>
+<pre><code>    x = 42  # Global variable
+
+    def print_global():
+        print(x)  # References the global variable
+
+    print_global()  # Output: 42</code></pre>
+<ul>
+<li>x is declared in the global scope.</li>
+<li>Inside the function print_global(), the global variable x is accessed and printed. Exactly the same explanation as number 1 except here, python is looking for the <code>x</code> variable.</li>
+<li>The function does not have its own x, so it refers to the global one.</li>
+</ul>
+<hr />
+<ol start="6" type="1">
+<li>Example below:</li>
+</ol>
+<pre><code>    x = 5  # Global variable
+
+    def local_scope():
+        x = 10  # Local variable with the same name
+        print(x)  # Output: 10 (Local variable is used)
+
+    local_scope()
+    print(x)  # Output: 5 (Global variable remains unchanged)</code></pre>
+<p>As you seen in the body of the function, when we <code>print(x)</code>, <code>10</code> is output. This is because of the process described in question 1; python will look in the area it is currently in before moving to another space (just like real life, if you lose your airpods while sitting on the couch, you aren’t going to start looking for you airpods in your kitchen, you start in the place where you are at and then expand outwards to the places that make sense.)</p>
 </div>
 
        
@@ -130,7 +193,7 @@
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s):        Alyssa Lytle,        Viktorya Hunanyan,        Megan Zhang, David Karash</span>
+      <span> Contributor(s):        Viktorya Hunanyan,        Alyssa Lytle,        Megan Zhang, David Karash</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
