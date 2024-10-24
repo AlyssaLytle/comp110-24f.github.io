@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1729780430.7330754">
+  <link rel="stylesheet" href="/static/styles.css?v=1729784899.801193">
 </head>
 
 <body>
@@ -150,7 +150,31 @@ modify_list(lst)
 print(lst)  # Output: [1, 2, 3, 4]</code></pre>
 <p>For more examples, please refer to the memory diagram page.</p>
 <p>3a. False; The function does not copy the object. Instead, it directly manipulates the original object via the reference.</p>
-<p>3b. True; To manipulate an object, it must be passed as a parameter to the function, allowing the function to access and modify it.</p>
+<p>3b. False; To manipulate an object a mutable object, it does not have to be passed as a parameter to the function to access and modify it.</p>
+<p>For example:</p>
+<pre><code>ex: list[int] = [2, 4]
+
+def example(num): 
+    if num &gt; len(ex): 
+        ex.append(num)
+
+example(4)
+print(ex)  # will print [2, 4, 4]</code></pre>
+<p>We must note that this is only the case for mutable data types.</p>
+<p>For example, the following snippet is unable to modify the <code>xs</code> variable becuase a string is an immutable type.</p>
+<pre><code>xs = &quot;01&quot;
+ys = &quot;23&quot;
+
+def get_coords() -&gt; None:
+    x_idx: int = 0
+    while x_idx &lt; len(xs):
+        y_idx: int = 0
+        while y_idx &lt; len(ys):
+            xs += xs[x_idx]
+            y_idx += 1
+        x_idx += 1
+
+print(xs)</code></pre>
 <p>3c. True; The function operates on the original object via the reference held by the parameter.</p>
 <p>3d. True; The reference (memory address/id number) held in the function parameter is the same as the reference of the original object, so any changes to the object in the function are reflected globally.</p>
 <hr />
