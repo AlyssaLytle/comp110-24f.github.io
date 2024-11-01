@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1730479875.1430614">
+  <link rel="stylesheet" href="/static/styles.css?v=1730492015.0372536">
 </head>
 
 <body>
@@ -61,7 +61,8 @@
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
-<li><a href="#questions">Questions</a></li>
+<li><a href="#conceptual-questions">Conceptual Questions</a></li>
+<li><a href="#general-questions">General Questions</a></li>
 <li><a href="#answers">Answers</a></li>
 </ul>
 </</ul>
@@ -69,8 +70,12 @@
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="questions">Questions</h1>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="conceptual-questions">Conceptual Questions</h1>
 <ol type="1">
+<li>What does <code>__init__</code> return? Why is it important for it to return this?</li>
+<li>Does every class need an <code>__init__</code> method?</li>
+<li>Let’s say you have a class with 5 attributes. When you call the constructor of this class, do you need to pass 5 arguments to the constructor? Is it possible to pass less than 5? How so?</li>
+<li>How many methods does a class have to have?</li>
 <li>A class definition provides a pattern for creating objects, but doesn’t make any objects itself. (T/F)</li>
 <li>By convention, Python class names start with a lowercase letter. (T/F)</li>
 <li>When you define a method in a class, all objects of that class have that method associated with it. (T/F)</li>
@@ -85,8 +90,56 @@
 <li><code>__init__</code> doesn’t contain a <code>return</code> statement, but it does return something. (T/F)</li>
 <li>Similar to how a function is first <em>defined</em> then <em>called</em>, a class is first <em>defined</em> then ____.</li>
 </ol>
-<h1 id="answers">Answers</h1>
+<h1 id="general-questions">General Questions</h1>
 <ol type="1">
+<li><p>Write the general formula of how you instantiate an object belonging to a class using the following. You might not need to use all and can use any multiple times: <code>:</code>, <code>=</code>, <code>()</code>, <code>&lt;arg&gt;</code>, <code>&lt;class_name&gt;</code>, <code>&lt;variable_name&gt;</code>, <code>method_name</code>, <code>__init__</code>.</p></li>
+<li><p>Write the general formula of how you call the constructor of a class using the following. You might not need to use all and can use any multiple times: <code>:</code>, <code>=</code>, <code>()</code>, <code>&lt;arg&gt;</code>, <code>&lt;class_name&gt;</code>, <code>&lt;variable_name&gt;</code>, <code>method_name</code>, <code>__init__</code>.</p></li>
+<li><p>Write the general formula of how you call a method of a class on an object stored in <code>&lt;variable_name&gt;</code>, using the following. You might not need to use all and can use any multiple times: <code>:</code>, <code>=</code>, <code>()</code>, <code>&lt;arg&gt;</code>, <code>&lt;class_name&gt;</code>, <code>&lt;variable_name&gt;</code>, <code>method_name</code>, <code>__init__</code>.</p></li>
+<li><p>Give an example of calling a constructor of a built in type.</p></li>
+<li><p>Give an example of calling a method on an object. Use the methods that we have already practiced.</p></li>
+<li><p>Given the following class definition, do the following:</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">class</span> TA:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    semester_pay: <span class="bu">int</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    hours_per_week: <span class="bu">int</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    title: <span class="bu">str</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title: <span class="bu">str</span>):  <span class="co"># Include self and title as parameters</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="va">self</span>.title <span class="op">=</span> title</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="cf">if</span> <span class="va">self</span>.title <span class="op">==</span> <span class="st">&quot;Comp 110 TA&quot;</span>:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>            <span class="va">self</span>.hours_per_week <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>            <span class="va">self</span>.semester_pay <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>            <span class="va">self</span>.hours_per_week <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>            <span class="va">self</span>.semester_pay <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>    <span class="kw">def</span> todo_list(<span class="va">self</span>, todo_list: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]:  <span class="co"># Define type hints for todo_list</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>        <span class="cf">return</span> todo_list</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>    <span class="kw">def</span> check_off(<span class="va">self</span>, task: <span class="bu">str</span>, todo_list: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]:  <span class="co"># Complete the check_off method</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Marks a task as done in the todo list.&quot;&quot;&quot;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>        <span class="cf">if</span> task <span class="kw">in</span> todo_list:</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>            todo_list[task] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>        <span class="cf">return</span> todo_list</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>    <span class="kw">def</span> change_class(<span class="va">self</span>, new_title: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="st">&quot;TA&quot;</span>:  <span class="co"># Method to create a new TA instance</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Creates a new TA object with the given title.&quot;&quot;&quot;</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>        <span class="cf">return</span> TA(new_title)</span></code></pre></div>
+<ul>
+<li>6a. In the fall, you become a TA for Bio 101. Using the class above, create a <code>TA</code> object that is a <code>"Bio 101 TA"</code>.</li>
+<li>6b. The next semester you change the class you TA for. Using the <code>change_class</code> method, create a new object of a <code>"Comp 110 TA"</code>.</li>
+<li>6c. As a comp 110 TA, you have to do the following:
+<ul>
+<li>4 hours of OH</li>
+<li>1 hour of AH</li>
+<li>grade quiz question 6.1 Using the <code>todo_list</code> method create a list of items that you have to do. You need to make sure that you have some way of accessing this list so that you can check off items as you progress through the week.</li>
+</ul></li>
+<li>6d. In your todo list object, check off <code>"1 hour of AH"</code>.</li>
+<li>6e. In your todo list object, check off <code>"4 hours of OH"</code>.</li>
+</ul>
+<h1 id="answers">Answers</h1>
+<p><em>Question 1-4 Coming Soon</em></p>
+<ol start="5" type="1">
 <li>True</li>
 <li>False</li>
 <li>True</li>
