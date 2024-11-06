@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1730899775.8896692">
+  <link rel="stylesheet" href="/static/styles.css?v=1730904345.075336">
 </head>
 
 <body>
@@ -105,7 +105,7 @@
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    hours_per_week: <span class="bu">int</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    title: <span class="bu">str</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title: <span class="bu">str</span>):  <span class="co"># Include self and title as parameters</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title: <span class="bu">str</span>):</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="va">self</span>.title <span class="op">=</span> title</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="cf">if</span> <span class="va">self</span>.title <span class="op">==</span> <span class="st">&quot;Comp 110 TA&quot;</span>:</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>            <span class="va">self</span>.hours_per_week <span class="op">=</span> <span class="dv">5</span></span>
@@ -114,18 +114,16 @@
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>            <span class="va">self</span>.hours_per_week <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>            <span class="va">self</span>.semester_pay <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>    <span class="kw">def</span> todo_list(<span class="va">self</span>, todo_list: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]:  <span class="co"># Define type hints for todo_list</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>    <span class="kw">def</span> todo_list(<span class="va">self</span>, todo_list: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]:</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>        <span class="cf">return</span> todo_list</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>    <span class="kw">def</span> check_off(<span class="va">self</span>, task: <span class="bu">str</span>, todo_list: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]:  <span class="co"># Complete the check_off method</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Marks a task as done in the todo list.&quot;&quot;&quot;</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>        <span class="cf">if</span> task <span class="kw">in</span> todo_list:</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>            todo_list[task] <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>        <span class="cf">return</span> todo_list</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>    <span class="kw">def</span> change_class(<span class="va">self</span>, new_title: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="st">&quot;TA&quot;</span>:  <span class="co"># Method to create a new TA instance</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a>        <span class="co">&quot;&quot;&quot;Creates a new TA object with the given title.&quot;&quot;&quot;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>        <span class="cf">return</span> TA(new_title)</span></code></pre></div>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>    <span class="kw">def</span> check_off(<span class="va">self</span>, task: <span class="bu">str</span>, todo_list: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">bool</span>]:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>        <span class="cf">if</span> task <span class="kw">in</span> todo_list:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>            todo_list[task] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>        <span class="cf">return</span> todo_list</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a>    <span class="kw">def</span> change_class(<span class="va">self</span>, new_title: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="st">&quot;TA&quot;</span>:</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>        <span class="cf">return</span> TA(new_title)</span></code></pre></div>
 <ul>
 <li><p>6a. In the fall, you become a TA for Bio 101. Using the class above, create a <code>TA</code> object that is a <code>"Bio 101 TA"</code>.</p></li>
 <li><p>6b. The next semester you change the class you TA for. Using the <code>change_class</code> method, create a new object of a <code>"Comp 110 TA"</code>.</p></li>
