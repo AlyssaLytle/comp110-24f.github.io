@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1731299490.7156796">
+  <link rel="stylesheet" href="/static/styles.css?v=1731499463.8564196">
 </head>
 
 <body>
@@ -88,7 +88,7 @@
 <p>Example usage:</p>
 <pre>
 <div class="terminal">
->>> from exercises.ex10.linked_list import Node, value_at
+>>> from exercises.ex08.linked_list import Node, value_at
 >>> value_at(Node(10, Node(20, Node(30, None))), 0)
 10
 >>> value_at(Node(10, Node(20, Node(30, None))), 1)
@@ -106,7 +106,7 @@ IndexError: Index is out of bounds on the list.
         raise ValueError(&quot;Cannot call max with None&quot;)</code></pre>
 <pre>
 <div class="terminal">
->>> from exercises.ex10.linked_list import Node, max
+>>> from exercises.ex08.linked_list import Node, max
 >>> max(Node(10, Node(20, Node(30, None))))
 30
 >>> max(Node(10, Node(30, Node(20, None))))
@@ -140,7 +140,7 @@ ValueError: Cannot call max with None.
 <p>Example usage:</p>
 <pre>
 <div class="terminal">
->>> from exercises.ex10.linked_list import linkify
+>>> from exercises.ex08.linked_list import linkify
 >>> linkify([1, 2, 3])
 1 -> 2 -> 3 -> None
 </div>
@@ -154,7 +154,7 @@ ValueError: Cannot call max with None.
 <p>Example usage:</p>
 <pre>
 <div class="terminal">
->>> from exercises.ex10.linked_list import scale, linkify
+>>> from exercises.ex08.linked_list import scale, linkify
 >>> scale(linkify([1, 2, 3]), 2)
 2 -> 4 -> 6 -> None
 </div>
@@ -165,7 +165,7 @@ ValueError: Cannot call max with None.
 <p>You should utilize the REPL or write your own tests to be confident of your implementations. None of these functions require much code to complete, but will take some mental gymnastics to think about approaching recursively.</p>
 <p>Remember: Focus on what you need to do with only the head node and then leave the rest of the problem working through the rest of the list to the recursive function call.</p>
 <p>When you are ready to submit for grading, run the following command:</p>
-<p><code>python -m tools.submission exercises/ex10</code></p>
+<p><code>python -m tools.submission exercises/ex08</code></p>
 </div>
 
        
@@ -173,7 +173,7 @@ ValueError: Cannot call max with None.
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s):        Kris Jordan,        Kaki Ryan, Vrinda Desai</span>
+      <span> Contributor(s):        Kris Jordan,        Kaki Ryan,        Vrinda Desai, Izzi Hinks</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
